@@ -1,0 +1,19 @@
+{
+  "name": "textapiary",
+  "version": "1.0.0",
+  "description": "main npm install package for TextAPIary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgiachett/TextAPIary.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tgiachett/TextAPIary/issues"
+  },
+  "homepage": "https://github.com/tgiachett/TextAPIary#readme"
+}
