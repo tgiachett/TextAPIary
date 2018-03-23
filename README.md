@@ -71,7 +71,7 @@
 ## Authors
 
 * **Tobia Giachetti** - [tgiachett](https://github.com/tgiachett)
-* **Bettina** - [bettijung](https://github.com/bettijung)
+* **Bettina Junghahn** - [bettijung](https://github.com/bettijung)
 * **Paula Peroutka** - [paulaperoutka](https://github.com/paulaperoutka)
 * **Alexander Florian-Prescott** - [EPluribusAlex](https://github.com/EPluribusAlex)
 
