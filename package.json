@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/tgiachett/TextAPIary/issues"
   },
-  "homepage": "https://github.com/tgiachett/TextAPIary#readme"
+  "homepage": "https://github.com/tgiachett/TextAPIary#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.4"
+  }
 }
