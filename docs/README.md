@@ -17,14 +17,21 @@
 #### Node Modules
 
 ```
-*Run `npm install` in the root folder to automatically install the following packages.*
+*Run `npm install` in the console from the root folder to automatically install the following packages.*
 
 * body-parser
 * dotenv
 * express
 * express-handlebars
 * handlebars
+* mysql2
 * sequelize
+```
+
+#### Environmental Variables
+
+```
+*Create a `.env` file in the root folder with the necessary information.  See `./docs/.env.example` for how it should look.*
 ```
 
 *And repeat*
