@@ -1,0 +1,351 @@
+<!-- ===================================================================== -->
+<!-- ** INDEX.HTML FILE FOR HOME WEBPAGE -->
+<!-- ===================================================================== -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width = device-width, initial-scale = 1"/> -->
+	<title>Text APIary - Your own Textable Diary</title>
+	
+    <!-- ** STYLE LINKS ================================================== -->
+	  	<!-- Materialize -->
+	  	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Personal Stylsheet -->
+        <link rel="stylesheet" type="text/css" href="../public/assets/css/style.css">
+        
+</head>
+
+<body class="index">
+
+<!-- ** NAV BAR ========================================================== -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <nav class="navbar navbar-default">
+                <div class="navbar-collapse collapse" id="navbar">
+                    <!-- Left Side Navbar Links -->
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/surf/">Public Diaries</a>
+                        </li>
+                        <li>
+                            <a href="/manage/">Manage your Diary</a>
+                        </li>
+                        <li>
+                            <a href="/create/">Create your own Diary</a>
+                        </li>
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        <li>
+                            <a href="/faq/">FAQ</a>
+                        </li>
+                    </ul>
+                    <!-- Right Side Social Links -->
+                    <ul class="nav navbar-nav navbar-right social">
+                        <a href="http://www.facebook.com" target="_blank">
+                            <i class="fa fa-facebook"></i> 
+                        </a>
+                        <a href="http://www.twitter.com/intent/tweet?text=Check+out+TextAPIary+-+A+free+online+diary+@+https://github.com/tgiachett/TextAPIary" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="http://www.plus.google.com" target="_blank">
+                            <i class="fa fa-google-plus"></i> 
+                        </a>
+                        <a href="http://www.linkedin.com" target="_blank">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>	
+
+
+<!-- ** MAIN BODY ======================================================== -->
+<main class="container">
+    
+    <div class="row" id="first_row">
+        <!-- ** TITLE DIV -->
+        <div class="col-lg-6">
+            <div class="box_in" id="title_div">
+                <img src="../public/assets/images/theHive.png" alt="logo">
+                <img src="../public/assets/images/hives.png" alt="logo2">
+
+            </div>
+        </div>
+
+        <!-- ** LOGIN DIV -->
+        <div class="col-lg-6">
+            <div class="box_in" id="login_box">
+                <div class="row">
+                    <!-- Left Side -->
+                    <div class="col-lg-8 borderleft">
+                        <h3>Diary Login</h3>
+                        <form class="form_class" action="/edit/" method="post" name="login">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label for ="exampleInputName2">Email</label>
+                                </div>    
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="exampleInputName2" name="e">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label for ="exampleInputEmail2">Password</label>
+                                </div>    
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="exampleInputEmail2" name="p">
+                                </div>
+                            </div>
+                            <input type="hidden" name="login" value="1">
+                            <div class="row">
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fa fa-user-o"> Login</i>
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <a href="/create/">
+                                                Not Registered?
+                                                <br>
+                                                Sign Up Today
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Right Side -->
+                    <div class="col-lg-4">
+                        <h3>or login using</h3>
+                        <a href="/create/?action=login_facebook" class="btn btn-default style_button mb">
+                            <i class="fa fa-facebook" aria-hidden="true"> Facebook</i>
+                        </a>
+                        <a href="/create/?action=login_google" class="btn btn-default style_button mb">
+                            <i class="fa fa-google-plus" aria-hidden="true"> Google</i>
+                        </a>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+
+	<!-- ** DESCRIPTION DIV -->
+	<div class="row mt">
+	    <div class="col-lg-12">
+            <div class="box_in">
+                <h1 class="heading text-center">Welcome to Text APIary</h1>
+                <div class="line"></div>
+                <!-- Website Description -->
+                <div class="row">
+                    <div class="col-lg-offset-2 col-lg-8 text-center">
+                        <p>
+                            Everyone can have their own personal online diary or journal on the Internet. It's free at Text APIary! The best part, is you can create it via text - with the convenience of your phone!
+                            We will host your journal online at no cost. Go ahead and create your own public or private diary now.
+                            You could even try out our group diaries if you have info you would like to share with your peers.
+                            If you have any suggestions or problems with this Text diary, please <a href="/contact/">let us know</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+
+
+	<!-- ** OTHER DIV -->
+	<div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="box_in" id="other_box">
+                Something can go in here!
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- ** PUBLIC DIARIES DIV -->
+	<div class="row">
+        <div class="col-lg-12">
+            <div class="box_in" id="pd_box">
+                <h1 class="heading text-center">Public Diaries</h1>
+                <div class="line"></div>
+                <!-- Public Diaries -->
+                <div class="row">
+                    <!-- Public Diary #1 -->
+                    <div class="col-lg-3 pds" id="pd1">
+                        <div class="box_in_small">
+                            <div class="tag">
+                                <a href="/read/d/pd1/title1">
+                                    <i class="fa fa-user"> EnlightenDaily</i>
+                                </a>
+                            </div>
+                            <a href="/read/d/pd1/title1">
+                                <h4>
+                                    <i class="fa fa-book"> How to Grow Our Brand</i>
+                                </h4>
+                            </a>
+                            <a href="/read/e/pbs1">Mmmmm.</a>
+                            <div class="line2"></div>
+                            221 entries
+                        </div>
+                    </div>
+                    <!-- Public Diary #2 -->
+                    <div class="col-lg-3 pds" id="pd2">
+                            <div class="box_in_small">
+                                <div class="tag">
+                                    <a href="/read/d/pd1/title2">
+                                        <i class="fa fa-user"> UNCCodingBootcamp</i>
+                                    </a>
+                                </div>
+                                <a href="/read/d/pd1/title2">
+                                    <h4>
+                                        <i class="fa fa-book"> Notes From Week 15</i>
+                                    </h4>
+                                </a>
+                                <a href="/read/e/pbs2">Advanced JavaScript</a>
+                                <div class="line2"></div>
+                                18 entries
+                            </div>
+                    </div>
+                    <!-- Public Diary #3 -->
+                    <div class="col-lg-3 pds" id="pd3">
+                            <div class="box_in_small">
+                                <div class="tag">
+                                    <a href="/read/d/pd1/title3">
+                                        <i class="fa fa-user"> WebDevTalk</i>
+                                    </a>
+                                </div>
+                                <a href="/read/d/pd1/title3">
+                                    <h4>
+                                        <i class="fa fa-book"> Let's Talk Agile</i>
+                                    </h4>
+                                </a>
+                                <a href="/read/e/pbs3">Agile Ninjas Only</a>
+                                <div class="line2"></div>
+                                3 entries
+                            </div>
+                    </div>
+                    <!-- Public Diary #4 -->
+                    <div class="col-lg-3 pds" id="pd4">
+                            <div class="box_in_small">
+                                <div class="tag">
+                                    <a href="/read/d/pd1/title4">
+                                        <i class="fa fa-user"> codingNinja</i>
+                                    </a>
+                                </div>
+                                <a href="/read/d/pd1/title4">
+                                    <h4>
+                                        <i class="fa fa-book"> Projects I've Taken On</i>
+                                    </h4>
+                                </a>
+                                <a href="/read/e/pbs4">Things happen</a>
+                                <div class="line2"></div>
+                                39 entries
+                            </div>
+                    </div>
+                <!-- Public Diaries Button -->
+                <div class="row" id="button_row">
+                    <div class="col-lg-12">
+                        <a href="/surf/" class="style_button_b">Read public diaries</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</main>
+<!-- ** END MAIN BODY ==================================================== -->
+ 
+
+<!-- ** FOOTER =========================================================== -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <!-- App Description -->
+            <div class="col-lg-4 text-left">
+                <div id="left_footer">
+                    <a href="#" id="footer_logo">
+                        <img src="../public/assets/images/theHive.png" alt="footer logo" id="footer_logo1">
+                        <img src="../public/assets/images/hives.png" alt="footer logo2" id="footer_logo2">
+                    </a>
+                </div>
+                Everyone can have their own personal online diary - It's free at Text APIary! You can create it via text with your phone!
+                We will host your journal online at no cost. Create your own public or private diary.
+                Try out our group diaries with your peers.
+            </div>
+            <!-- Find Us -->
+            <div class="col-lg-4 text-center" id="find_us">
+                <h4>Creators</h4>
+                <p>Find us on GitHub at:</p>
+                <img src="../public/assets/images/31292513.jpeg" alt="Contact Person" class="personimg"> <a href="https://github.com/tgiachett" target="_blank">Tobia Giachetti</a>  
+                <img src="../public/assets/images/IMG_2609.JPG" alt="Contact Person" class="personimg"> <a href="https://github.com/bettijung" target="_blank">Bettina Junghahn</a>  
+                <br>
+                <img src="../public/assets/images/PP.jpg" alt="Contact Person" class="personimg"> <a href="https://github.com/paulaperoutka" target="_blank">Paula Peroutka</a>  
+                <img src="../public/assets/images/alex.jpeg" alt="Contact Person" class="personimg"> <a href="https://github.com/MartyFromCary" target="_blank">Alex Florian Prescott</a>  
+            </div>
+            <!-- Try out our app -->
+            <div class="col-lg-4 text-left">
+                <h4>Feel free to try out the (beta) app for Android</h4>
+                <a href="https://play.google.com/store/apps">textAPIary.org app</a>
+                <br>
+                <small>Google Play and the Goodle Play logo are trademarks of Google Inc.</small>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="row">
+            <div class="social_buttons">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6 text-right">
+                    © 2018 Copyright. All rights reserved.
+                    <br>
+                    <small>Questions/feedback/problems? 
+                        <a href="/contact/">Contact us</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ** SCRIPT LINKS ===================================================== -->
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Materialize  -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- App JS file -->
+	<script type="text/javascript" src="****"></script>
+
+</body>
+
+</html>
+
+
+
+<!-- NOTES*** -->
+<!-- =================================================== -->
+
+<!-- Must intall mdi for icons: $ npm install mdi  -->
