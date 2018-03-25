@@ -1,6 +1,7 @@
 // dependencies 
 const express = require("express"),
-	bodyParser = require("body-parser");
+	bodyParser = require("body-parser"),
+	exphbs = require("express-handlebars");
 
 const db = require("./models");
 
@@ -10,11 +11,13 @@ const PORT = process.env.PORT || 8080;
 // setup body-parser
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
-// app.use(bodyParser.static("public"));
 
-// pass through routes
-// require("./routes/html_routes.js")(app);
-// require("./routes/api_routes.js")(app);
+// static directory
+app.use(express.static("public"));
+
+// setup handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // sync models with sequelize and start express node server
 db.sequelize.sync({ force: true }).then(() => {
