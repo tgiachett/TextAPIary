@@ -1,0 +1,287 @@
+/* ======================================================== */
+/* ** STYLE.CSS FILE FOR PERSONAL STYLING */
+/* ======================================================== */
+
+/* ** NAV BAR ============================================= */
+.navbar-default {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0;
+}
+    .navbar-collapse {
+        padding-left: 0;
+    }
+        .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+            background: transparent;
+        }
+        .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a {
+            color: #ffffff;
+        }
+    nav .social {
+        position: relative;
+        margin-left: 0px;
+    }
+        .social a {
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            color: #ffffff;
+            float: left;
+            font-size: 14px;
+            line-height: 23px !important;
+            margin: 10px 0 0 6px;
+            padding: 3px;
+            width: 34px;
+            /* align-content: center; */
+        }
+            .social i {
+                margin-right: 0px;
+            }
+                .social .fa {
+                    color: #ffffff;
+                    font-size: inherit;
+                    display: inline-block;
+                    text-rendering: auto;
+                    }
+
+/* ** MAIN BODY =========================================== */
+body {
+    display: block; 
+    max-width: 100%;
+    height: auto; 
+    /* height: 100%; */
+    /* position: fixed; */
+}
+body.index, body.page {
+    background: url(../images/Diary.jpg) #0e0e0e no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    opacity: 0.9;
+}
+    .index p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+    /* .index a {
+
+    } */
+    
+    /* * DIV ============================================== */
+    /* #first_row {
+        margin: 5px auto;
+    } */
+    .box_in {
+        background: rgba(0, 0, 0, 0.55);
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 5px auto;
+    }
+    .box_in h3 {
+        color: #fff;
+        font-weight: 300;
+        font-size: 20px;
+        margin: 0 0 12px;
+    }
+
+        /* TITLE DIV ====================================== */
+        #title_div {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            /* min-height: 208px; */
+        }
+        /* LOG IN DIV ===================================== */
+        #login_box {
+            padding: 18px 20px 0;
+            min-height: 207px;
+        }
+            .borderleft {
+                border-right: 2px solid rgba(255, 255, 255, 0.55);
+            }
+                /* .form_class {
+                } */
+                    .form_class .row {
+                        margin-top: 9px;
+                        margin-bottom: 9px;
+                    }
+                    .form_class label {
+                        color: #fff;
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 29px;
+                    }
+                    .form_class input, input[type="text"], input[type="email"], textarea.form-control, select.form-control {
+                        color: #fff;
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 29px;
+                        background: rgba(255, 255, 255, 0);
+                        border: 2px solid #41EAD4;
+                        border-radius: 5px;
+                        padding: 0px 5px;
+                    }
+                    .form_class button {
+                        background: rgba(255, 255, 255, 0) none repeat scroll 0 0;
+                        border: 2px solid #41EAD4;
+                        border-radius: 5px;
+                        color: #41EAD4;
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 29px;
+                        padding: 1px 11px;
+                    }
+                .borderleft a {
+                    font-size: 12px;
+                }
+                    a {
+                        color: #41EAD4;
+                        transition: background-position 1ms linear;
+                    }
+            .mb {
+                margin-bottom: 9px;
+            }
+            .style_button {
+                background: rgba(255, 255, 255, 0);
+                border: 2px solid #41EAD4;
+                border-radius: 5px;
+                color: #41EAD4;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 29px;
+                padding: 1px 11px;
+                width: 100%;
+            }
+
+    /* *DESCRIPTION DIV =================================== */
+    .mt {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+        h1 .heading {
+            color: #fff;
+            font-weight: 300;
+            font-size: 40px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .line {
+            height: 1px;
+            width: 260px;
+            margin: 20px auto;
+            background: #41EAD4;
+        }
+
+    /* *OTHER DIV ================================ */
+    #other_box {
+        margin: 10px auto;
+    }
+
+    /* *PUBLIC DIARIES DIV ================================ */
+    #pd_box {
+        margin: 20px auto;
+    }
+        .box_in_small {
+            background: rgba(0, 0, 0, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 5px;
+            font-size: 12px;
+            margin-top: 20px;
+            min-height: 165px;
+            padding: 33px 15px;
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+            .tag {
+                background: #000 none repeat scroll 0 0;
+                border: 1px solid rgba(255, 255, 255, 0.55);
+                border-radius: 5px;
+                font-size: 12px;
+                left: 15%;
+                margin: 0 auto;
+                padding: 4px 10px;
+                position: absolute;
+                text-align: center;
+                top: -8px;
+                width: 70%;
+            }
+                .fa {
+                    display: inline-block;
+                    font-size: inherit;
+                    text-rendering: auto;
+                }
+                .line2 {
+                    height: 1px;
+                    width: 60px;
+                    margin: 12px auto;
+                    background: #41EAD4;
+                }
+        a.style_button_b {
+            background: rgba(255, 255, 255, 0) none repeat scroll 0 0;
+            border: 2px solid #41EAD4;
+            border-radius: 5px;
+            clear: both;
+            color: #41EAD4;
+            display: block;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 29px;
+            margin: 15px auto 10px;
+            padding: 5px 20px;
+            text-align: center;
+            width: 180px;
+        }
+/* ** FOOTER ============================================== */
+footer {
+    margin-top: 45px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #000000;
+    font-size: 12px;
+}
+    #left_footer {
+        float: left;
+        width: 100%;
+    }
+        #footer_logo {
+            float: left;
+        }
+        #footer_logo1 {
+            width: 80px;
+            margin-right: 10px;
+            margin-bottom: 3px;
+        }
+        #footer_logo2 {
+            width: 190px;
+            margin-right: 10px;
+        }
+    #find_us p{
+        font-size: 12px;
+    }
+        .personimg {
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            color: #ffffff;
+            float: left;
+            font-size: 14px;
+            line-height: 23px !important;
+            margin: 10px 0 0 6px;
+            padding: 1px;
+            width: 34px;
+            float: none;
+        }
+    .social_buttons {
+        border-top: 1px solid rgba(255, 255, 255, 0.55);
+        margin-bottom: 10px;
+        margin-top: 15px;
+        padding-top: 10px;
+        text-align: left;
+    }
+
+
+
+
+/* NOTES */
+/* -------------------------------------------------------------------------- */
+/* turquoise color : #41EAD4 */
+/* yellow orange color: #FBB13C */
