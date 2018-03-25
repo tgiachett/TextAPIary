@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/tgiachett/TextAPIary/issues"
   },
-  "homepage": "https://github.com/tgiachett/TextAPIary#readme"
+  "homepage": "https://github.com/tgiachett/TextAPIary#readme",
+  "dependencies": {
+    "mdi": "^2.1.99",
+    "npm": "^5.7.1"
+  }
 }
