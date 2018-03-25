@@ -1,13 +1,11 @@
-const models  = require('../models');
-const express = require('express');
+const models  = require("../models");
+const express = require("express");
 const router  = express.Router();
 
 router.get("/", (req, res) => {
-  models.User.findAll({
-    include: [ models.Entry ]
-  }).then((users) => {
+  models.User.findAll({}).then((users) => {
     res.render("index", {
-      title: "",
+      title: "placeholder",
       users: users
     });
   });

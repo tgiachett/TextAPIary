@@ -3,7 +3,8 @@ const express = require("express"),
 	bodyParser = require("body-parser"),
 	exphbs = require("express-handlebars");
 
-const db = require("./models");
+const db = require("./models"),
+	routes = require("./routes");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -18,6 +19,8 @@ app.use(express.static("public"));
 // setup handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+app.use('/', routes);
 
 // sync models with sequelize and start express node server
 db.sequelize.sync({ force: true }).then(() => {
