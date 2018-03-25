@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/tgiachett/TextAPIary#readme",
   "dependencies": {
-    "mdi": "^2.1.99",
-    "npm": "^5.7.1"
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.4"
   }
 }

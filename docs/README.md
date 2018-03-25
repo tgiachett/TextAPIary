@@ -8,20 +8,30 @@
 
 ### Prerequisites
 
-*What things you need to install the software and how to install them*
-
 ```
-*Give examples*
+*Give an example*
 ```
 
 ### Installing
 
-*A step by step series of examples that tell you have to get a development env running*
-
-*Say what the step will be*
+#### Node Modules
 
 ```
-*Give the example*
+*Run `npm install` in the console from the root folder to automatically install the following packages.*
+
+* body-parser
+* dotenv
+* express
+* express-handlebars
+* handlebars
+* mysql2
+* sequelize
+```
+
+#### Environmental Variables
+
+```
+*Create a `.env` file in the root folder with the necessary information.  See `./docs/.env.example` for how it should look.*
 ```
 
 *And repeat*
@@ -52,15 +62,12 @@
 *Give an example*
 ```
 
-## Deployment
+## Use/Deployment
 
 *Add additional notes about how to deploy this on a live system*
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
