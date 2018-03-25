@@ -1,12 +1,12 @@
 "use strict";
 
 const fs = require("fs"),
-			path = require("path"),
-			Sequelize = require("sequelize");
+	path = require("path"),
+	Sequelize = require("sequelize");
 
 const basename = path.basename(module.filename),
-			env = process.env.NODE_ENV || "development",
-			config = require(__dirname + "/../config/config.js")[env];
+	env = process.env.NODE_ENV || "development",
+	config = require(__dirname + "/../config/config.js")[env];
 
 const db = {};
 
