@@ -1,7 +1,7 @@
 'use strict'
 
 // do I have to required this if this is required in server.js?
-require('dotenv').config()
+require('dotenv').config();
 
 //reverse carrier lookup for sending zero cost text via email
 
