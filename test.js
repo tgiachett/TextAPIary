@@ -19,9 +19,17 @@ const sms = require('./controller/sms.js');
 
 // makeReq();
 
-var result = sms.listSms().then(res => res)
 
-console.log(result)
+var result;
+sms.listSms().then(res => { 
+  result = res
+  console.log(result.sms_messages[0].body)
+})
+
+// setTimeout(function() {
+//   console.log(result.sms_messages[0].body)
+// }, 2000)
+
 
 
 module.exports = sms;
