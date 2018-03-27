@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/incoming", (req, res) => {
+	res.send(req);
 	console.log(req);
 });
 
