@@ -39,11 +39,11 @@ var connector = new zang.SmsConnector({
     authToken: process.env.ZAUTHTOKEN
 });
 
-module.exports = {
+const sms = {
     //default statusCallback is 'http://mycallback.url.com'
     // will incur $.005 per message sent 
     sendSms: function (endNum, message, statusCallback) {
-
+        
         connector.sendSmsMessage({
             to: endNum,
             from: process.env.ZNUM,
@@ -51,38 +51,51 @@ module.exports = {
             statusCallback: statusCallback,
             statusCallbackMethod: enums.HttpMethod.GET,
             allowMultiple: true
-        }).then(function (data) {
-            console.log(data);
-            return data
+        }).then((data) => {
+            
+                console.log(data);
+                return data;
+            
         });
         
     },
     // lists messages sent to the number
     listSms: function () {
-        
-        connector.listSmsMessages({
-            to: process.env.ZNUM,
-            page: 0,
-            pageSize: 30
-        }).then(function (data) {
-            console.log(data);
-            return data
-        })
-
-
+        return new Promise(
+            function(resolve, reject) {
+                connector.listSmsMessages({
+                    to: process.env.ZNUM,
+                    page: 0,
+                    pageSize: 30
+                }).then((data) => {
+                    
+                        
+                         resolve(data);
+                    
+                })
+            }
+        )
     },
     //view one message located by SmsSid or sid
     viewSms: function(smsSid) {
         connector.viewSmsMessage({ 
             smsMessageSid: smsSid 
-        }).then(function (data) { 
-            console.log(data);
-            return data 
+        }).then((error, data) => { 
+            if (error) {
+                throw error;
+            }
+            else {
+                console.log(data);
+                return data;
+            }
         });
     }
 
-}
+};
 
 
+
+
+module.exports = sms;
 
 
