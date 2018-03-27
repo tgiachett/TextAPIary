@@ -11,4 +11,8 @@ router.get("/", (req, res) => {
   });
 });
 
+router.post("/api/incoming", (req, res) => {
+	console.log(req);
+});
+
 module.exports = router;
