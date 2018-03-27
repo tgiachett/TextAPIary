@@ -25,7 +25,7 @@ app.set("view engine", "handlebars");
 app.use('/', routes);
 
 // sync models with sequelize and start express node server
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
 	app.listen(PORT, () => {
 		console.log("Server listening on port " + PORT);
 	});
