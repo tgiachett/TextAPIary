@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 // do I have to required this if this is required in server.js?
 require('dotenv').config();
@@ -51,9 +51,14 @@ const sms = {
             statusCallback: statusCallback,
             statusCallbackMethod: enums.HttpMethod.GET,
             allowMultiple: true
-        }).then(function (data) {
-            console.log(data);
-            return data;
+        }).then((error, data) => {
+            if (error) {
+                throw error;
+            }
+            else {
+                console.log(data);
+                return data;
+            }
         });
         
     },
@@ -64,9 +69,14 @@ const sms = {
             to: process.env.ZNUM,
             page: 0,
             pageSize: 30
-        }).then(function (data) {
-            console.log(data);
-            return data;
+        }).then((error, data) => {
+            if (error) {
+                throw error;
+            }
+            else {
+                console.log(data);
+                return data;
+            }
         })
 
 
@@ -74,14 +84,21 @@ const sms = {
     //view one message located by SmsSid or sid
     viewSms: function(smsSid) {
         connector.viewSmsMessage({ 
-            smsMessageSid: smsSid;
-        }).then(function (data) { 
-            console.log(data);
-            return data ;
+            smsMessageSid: smsSid 
+        }).then((error, data) => { 
+            if (error) {
+                throw error;
+            }
+            else {
+                console.log(data);
+                return data;
+            }
         });
     }
 
 };
+
+
 
 
 module.exports = sms;
