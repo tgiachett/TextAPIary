@@ -9,7 +9,7 @@ function makeReq () {
 
 function delayAsynch (error, smsReq) {
 	if (error) {
-		catch error;
+		throw error;
 	}
 	else{
 		console.log(smsReq);
