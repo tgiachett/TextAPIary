@@ -24,5 +24,9 @@
     "handlebars": "^4.0.11",
     "mysql2": "^1.5.3",
     "sequelize": "^4.37.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.5"
   }
 }
