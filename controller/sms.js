@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 
 // do I have to required this if this is required in server.js?
 require('dotenv').config();
@@ -39,7 +39,7 @@ var connector = new zang.SmsConnector({
     authToken: process.env.ZAUTHTOKEN
 });
 
-module.exports = {
+const sms = {
     //default statusCallback is 'http://mycallback.url.com'
     // will incur $.005 per message sent 
     sendSms: function (endNum, message, statusCallback) {
@@ -53,7 +53,7 @@ module.exports = {
             allowMultiple: true
         }).then(function (data) {
             console.log(data);
-            return data
+            return data;
         });
         
     },
@@ -66,7 +66,7 @@ module.exports = {
             pageSize: 30
         }).then(function (data) {
             console.log(data);
-            return data
+            return data;
         })
 
 
@@ -74,15 +74,16 @@ module.exports = {
     //view one message located by SmsSid or sid
     viewSms: function(smsSid) {
         connector.viewSmsMessage({ 
-            smsMessageSid: smsSid 
+            smsMessageSid: smsSid;
         }).then(function (data) { 
             console.log(data);
-            return data 
+            return data ;
         });
     }
 
-}
+};
 
 
+module.exports = sms;
 
 
