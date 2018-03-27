@@ -43,7 +43,7 @@ const sms = {
     //default statusCallback is 'http://mycallback.url.com'
     // will incur $.005 per message sent 
     sendSms: function (endNum, message, statusCallback) {
-
+        
         connector.sendSmsMessage({
             to: endNum,
             from: process.env.ZNUM,
@@ -64,22 +64,20 @@ const sms = {
     },
     // lists messages sent to the number
     listSms: function () {
-        
-        connector.listSmsMessages({
-            to: process.env.ZNUM,
-            page: 0,
-            pageSize: 30
-        }).then((error, data) => {
-            if (error) {
-                throw error;
+        return new Promise(
+            function(resolve, reject) {
+                connector.listSmsMessages({
+                    to: process.env.ZNUM,
+                    page: 0,
+                    pageSize: 30
+                }).then((data) => {
+                    
+                        
+                         resolve(data);
+                    
+                })
             }
-            else {
-                console.log(data);
-                return data;
-            }
-        })
-
-
+        )
     },
     //view one message located by SmsSid or sid
     viewSms: function(smsSid) {
