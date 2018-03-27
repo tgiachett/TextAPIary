@@ -51,14 +51,11 @@ const sms = {
             statusCallback: statusCallback,
             statusCallbackMethod: enums.HttpMethod.GET,
             allowMultiple: true
-        }).then((error, data) => {
-            if (error) {
-                throw error;
-            }
-            else {
+        }).then((data) => {
+            
                 console.log(data);
                 return data;
-            }
+            
         });
         
     },
