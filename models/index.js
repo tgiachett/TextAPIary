@@ -10,7 +10,20 @@ const basename = path.basename(module.filename),
 
 const db = {};
 
-const sequelize = new Sequelize(config.database, config.username, config.password, config);
+let sequelize;
+
+if(process.env.DATABASE_URL) {
+    // the application is executed on Heroku ... use the postgres database
+    sequelize = new Sequelize(process.env.DATABASE_URL, {
+      dialect:  'postgres',
+      protocol: 'postgres',
+      port:     8080,
+      logging:  true //false
+    })
+  } else {
+    // the application is executed on the local machine ... use mysql
+    sequelize = new Sequelize(config.database, config.username, config.password, config);
+  }
 
 fs
   .readdirSync(__dirname)
