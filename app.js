@@ -7,7 +7,8 @@ const express = require("express"),
 const db = require("./models"),
 	routes = require("./routes"),
 	users = require("./routes/users"),
-	zang = require("./routes/zang");
+	zang = require("./routes/zang"),
+	api = require("./routes/api");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -25,9 +26,10 @@ app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/zang', zang);
+app.use("/", routes);
+app.use("/api", api);
+app.use("/users", users);
+app.use("/zang", zang);
 
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
