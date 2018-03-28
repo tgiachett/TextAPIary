@@ -5,7 +5,9 @@ const express = require("express"),
 	path = require("path");
 
 const db = require("./models"),
-	routes = require("./routes");
+	routes = require("./routes"),
+	users = require("./routes/users"),
+	zang = require("./routes/zang");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -24,10 +26,15 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 app.use('/', routes);
+app.use('/users', users);
+app.use('/zang', zang);
 
-// sync models with sequelize and start express node server
-db.sequelize.sync({ force: false }).then(() => {
-	app.listen(PORT, () => {
-		console.log("Server listening on port " + PORT);
-	});
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: (app.get('env') === 'development') ? err : {}
+  });
 });
+
+module.exports = app;
