@@ -59,3 +59,5 @@ router.post("/api/incoming", (req, res) => {
       break;
   }
 });
+
+module.exports = router;
