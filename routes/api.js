@@ -7,7 +7,6 @@ router.get("/api/all/", (req, res) => {
   	include: [ models.Entry ]
   }).then((dbUsers) => {
       res.json(dbUsers);
-    });
 });
 
 module.exports = router;
