@@ -12,5 +12,32 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/surf", (req, res) => {
+  models.User.findAll({}).then((users) => {
+    res.render("index", {
+      title: "placeholder",
+      users: users
+    });
+  });
+});
+
+router.get("/about", (req, res) => {
+  models.User.findAll({}).then((users) => {
+    res.render("index", {
+      title: "placeholder",
+      users: users
+    });
+  });
+});
+
+router.get("/faq", (req, res) => {
+  models.User.findAll({}).then((users) => {
+    res.render("index", {
+      title: "placeholder",
+      users: users
+    });
+  });
+});
+
 module.exports = router;
 
