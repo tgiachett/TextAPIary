@@ -53,7 +53,7 @@ body {
     /* position: fixed; */
 }
 body.index, body.page {
-    background: url(../images/Diary.jpg) #0e0e0e no-repeat center center fixed;
+    background: url(../images/blackComb.jpeg) #0e0e0e no-repeat center center fixed;
     background-size: cover;
     font-family: 'Open Sans', sans-serif;
     color: #fff;
@@ -90,6 +90,8 @@ body.index, body.page {
         #title_div {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
             /* min-height: 208px; */
+            background: black;
+            opacity: 0.99;
         }
         /* LOG IN DIV ===================================== */
         #login_box {
@@ -117,15 +119,15 @@ body.index, body.page {
                         font-weight: 300;
                         line-height: 29px;
                         background: rgba(255, 255, 255, 0);
-                        border: 2px solid #41EAD4;
+                        border: 2px solid #03F7EB;
                         border-radius: 5px;
                         padding: 0px 5px;
                     }
                     .form_class button {
                         background: rgba(255, 255, 255, 0) none repeat scroll 0 0;
-                        border: 2px solid #41EAD4;
+                        border: 2px solid #03F7EB;
                         border-radius: 5px;
-                        color: #41EAD4;
+                        color: #03F7EB;
                         font-size: 14px;
                         font-weight: 300;
                         line-height: 29px;
@@ -135,7 +137,7 @@ body.index, body.page {
                     font-size: 12px;
                 }
                     a {
-                        color: #41EAD4;
+                        color: #03F7EB;
                         transition: background-position 1ms linear;
                     }
             .mb {
@@ -143,9 +145,9 @@ body.index, body.page {
             }
             .style_button {
                 background: rgba(255, 255, 255, 0);
-                border: 2px solid #41EAD4;
+                border: 2px solid #03F7EB;
                 border-radius: 5px;
-                color: #41EAD4;
+                color: #03F7EB;
                 font-size: 14px;
                 font-weight: 300;
                 line-height: 29px;
@@ -168,10 +170,50 @@ body.index, body.page {
             height: 1px;
             width: 260px;
             margin: 20px auto;
-            background: #41EAD4;
+            background: #03F7EB;
         }
 
     /* *OTHER DIV ================================ */
+    .center-me {
+       
+        margin-left: auto;
+        margin-right: auto;
+    }  
+        .hex {
+            float: left;
+            margin-right: -26px;
+            margin-bottom: -50px;
+        }
+            .hex .left {
+                float: left;
+                /* width: 0; */
+                border-right: 30px solid #03F7EB;
+                border-top: 52px solid transparent;
+                border-bottom: 52px solid transparent;
+            }
+            .hex .middle {
+                float: left;
+                width: 60px;
+                height: 104px;
+                background: #03F7EB;
+            }
+            .hex .right {
+                float: left;
+                /* width: 0; */
+                border-left: 30px solid #03F7EB;
+                border-top: 52px solid transparent;
+                border-bottom: 52px solid transparent;
+            }
+            .hex-row {
+                clear: left;
+            }
+            .hex.even {
+                margin-top: 53px;
+            }
+            .hex.no-show {
+                visibility: hidden;
+            }
+
     #other_box {
         margin: 10px auto;
     }
@@ -214,14 +256,14 @@ body.index, body.page {
                     height: 1px;
                     width: 60px;
                     margin: 12px auto;
-                    background: #41EAD4;
+                    background: #03F7EB;
                 }
         a.style_button_b {
             background: rgba(255, 255, 255, 0) none repeat scroll 0 0;
-            border: 2px solid #41EAD4;
+            border: 2px solid #03F7EB;
             border-radius: 5px;
             clear: both;
-            color: #41EAD4;
+            color: #03F7EB;
             display: block;
             font-size: 14px;
             font-weight: 300;
@@ -283,5 +325,12 @@ footer {
 
 /* NOTES */
 /* -------------------------------------------------------------------------- */
-/* turquoise color : #41EAD4 */
+/* turquoise color : #03F7EB */
 /* yellow orange color: #FBB13C */
+
+
+/* .connect-with-me .connect-body .img-responsive:hover {
+	border: 2px solid lightgrey;
+	transform: rotate(-10deg);
+	cursor: pointer;
+} */
