@@ -24,7 +24,8 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.11",
     "mysql2": "^1.5.3",
-    "sequelize": "^4.37.4"
+    "sequelize": "^4.37.4",
+    "zang-node": "0.0.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
