@@ -1,3 +1,4 @@
+
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
@@ -7,9 +8,7 @@ module.exports = function(sequelize, DataTypes) {
   {
     classMethods: {
       associate: (models) => {
-        models.User.hasMany(models.Entry, {
-          onDelete: "cascade"
-        });
+        models.User.hasMany(models.Entry);
       }
     }
   });
