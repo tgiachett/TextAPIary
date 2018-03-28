@@ -12,13 +12,13 @@ module.exports = {
   test: {
     username: "root",
     password: null,
-    database: "database_test",
+    database: "entries_db",
     host: "127.0.0.1",
     dialect: "mysql"
   },
   production: {
     username: "root",
-    password: null,
+    password: process.env.DB_PASS,
     database: "entries_db",
     host: "127.0.0.1",
     dialect: "mysql"
