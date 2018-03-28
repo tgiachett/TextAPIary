@@ -11,7 +11,6 @@ const db = require("./models"),
 	api = require("./routes/api");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
 
 // setup body-parser
 app.use(bodyParser.urlencoded({ extended: true}));
