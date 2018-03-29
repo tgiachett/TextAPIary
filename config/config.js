@@ -1,7 +1,7 @@
 // load environmental variables
 require("dotenv").config();
 
-const config = {
+module.exports = {
   development: {
     username: "root",
     password: process.env.DB_PASS,
@@ -25,4 +25,4 @@ const config = {
   }
 };
 
-module.exports = config;
+
