@@ -5,33 +5,29 @@
 // 	it (“should opposite”, function () {
 // 		expect( () => myFunction(params)).to.throw(Error); }) ;
 // });
-const chai = require("chai");
-let should = chai.should();
-let expect = chai.expect();
-
-const sequelize = require("../models/index.js");
-
-const sms = require("../controller/sms.js");
 
 //TEST CONNECTION
-describe("Test connection", function () {
-	it("should authenticate", function () {
-		expect(sequelize.authenticate()).to.not.be.rejected();
-		// return sequelize.authenticate().then(function () {
-		// 	throw new Error("Not connecting arghhhh...");
-		// }, function (error) {
-		// 		console.log("You aaaaare....CONNECTED!")
-		// });
-	});
+const expect = require("chai").expect;
 
-	it ("should not authenticate", function () {
-		expect(sequelize.authenticate()).to.be.rejected();
+const config = require("../config/config.js");
+
+const w = require("../bin/www");
+
+
+
+//TEST DATABASE BEING USED
+describe("Test database use", function () {
+	it("should use MySQL entries database for development", function () {
+		expect(config.development.database).to.equal("entries_db");
 	});
 });
 
-
-
-
+//TEST CONNECTION
+describe("Test local connection", function () {
+	it("should connect to local port", function () {
+		expect(w).to.equal(8080);
+	});
+});
 
 // describe("Send SMS", function () {
 // 	it("should send an sms from Zang", function () {

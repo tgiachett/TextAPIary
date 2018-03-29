@@ -90,3 +90,6 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+//CHAI MOCHA TEST export
+module.exports = port;
