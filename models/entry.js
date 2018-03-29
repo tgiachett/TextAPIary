@@ -3,6 +3,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   const Entry = sequelize.define("Entry", {
+    body: {
       type: DataTypes.TEXT,
       alloNull: false,
       validate: { len: [1] },
