@@ -3,7 +3,7 @@ const models  = require("../models");
 const express = require("express");
 const router  = express.Router();
 
-router.post("/zang/incoming", (req, res) => {
+router.post("/incoming", (req, res) => {
   res.send("Success");
   console.log(req.body);
   let smsComObj = {};
