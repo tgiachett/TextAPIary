@@ -6,10 +6,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "nodemon": "nodemon --exec npm start",
-    "test": {
-      // "echo \"Error: no test specified\" && exit 1" 
-      "mocha"
-      }
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

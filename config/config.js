@@ -1,7 +1,7 @@
 // load environmental variables
 require("dotenv").config();
 
-module.exports = {
+const config = {
   development: {
     username: "root",
     password: process.env.DB_PASS,
@@ -23,4 +23,6 @@ module.exports = {
     host: "127.0.0.1",
     dialect: "mysql"
   }
-}
+};
+
+module.exports = config;
