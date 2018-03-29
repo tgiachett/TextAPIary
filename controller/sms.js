@@ -60,22 +60,22 @@ const sms = {
         
     },
     // lists messages sent to the number
-    listSms: function () {
-        return new Promise(
-            function(resolve, reject) {
-                connector.listSmsMessages({
-                    to: process.env.ZNUM,
-                    page: 0,
-                    pageSize: 30
-                }).then((data) => {
+    // listSms: function () {
+    //     return new Promise(
+    //         function(resolve, reject) {
+    //             connector.listSmsMessages({
+    //                 to: process.env.ZNUM,
+    //                 page: 0,
+    //                 pageSize: 30
+    //             }).then((data) => {
                     
                         
-                         resolve(data);
+    //                      resolve(data);
                     
-                })
-            }
-        )
-    },
+    //             })
+    //         }
+    //     )
+    // },
     //view one message located by SmsSid or sid
     viewSms: function(smsSid) {
         connector.viewSmsMessage({ 
