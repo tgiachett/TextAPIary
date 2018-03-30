@@ -20,15 +20,15 @@ router.post("/incoming", (req, res) => {
     case "entry":
       //entry tree
       //if there's a tbl name
-      if(smsArr[2]) {
+      // if(smsArr[2]) {
         
         //make an object for the entry into that tbl
-        smsComObj.tbl = smsArr[2];
+        // smsComObj.tbl = smsArr[2];
         smsComObj.comBody = smsArr[1];
         //if there's a password set for that table, store it
-        if(smsArr[3]) {
-          smsComObj.tblPass = smsArr[3];
-        }
+        // if(smsArr[3]) {
+        //   smsComObj.tblPass = smsArr[3];
+        // }
         models.Entry.create(smsComObj)
         //get the id of the entry just entered
         let thisId = models.Entry.findAll({
@@ -42,11 +42,11 @@ router.post("/incoming", (req, res) => {
         // send out the response text
         sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${thisId}`);
         
-      } else { 
+      // } else { 
           // validate: if there is no table name given, send error
-          let noTblErr = "Please give tbl arg after message to store in or create table";
-          sms.sendSms(smsComObj.from, noTblErr);
-      }
+          // let noTblErr = "Please give tbl arg after message to store in or create table";
+          // sms.sendSms(smsComObj.from, noTblErr);
+      // }
       break;
     case "query":
       switch(smsArr[1]) {
