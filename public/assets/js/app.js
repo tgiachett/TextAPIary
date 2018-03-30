@@ -1,13 +1,20 @@
+//FOR RELOADING LOCATION TO UPDATE PAGE
 // $(function () {
-//   $('#SOME-button').click(function(event){
-//     event.preventDefault();
-//     var id = $(this).attr("SOME-id");
-//     $.ajax(some stuff, {
-
-//     }).then(
-//       function () {
-//           location.reload();
-//       }
-//   	);
+// 	$("#hexmodal").click((event) => {
+// 		event.preventDefault();
+// 		var id = $(this).attr("click-hex");
+// 		$.ajax(somestuff, {
+// 			//...
+// 		}).then(function () {
+// 			location.reload();
+// 		});
+// 	});
 // });
 
+//TRIGGER DIARY TEXT MODAL
+$(document).ready(function(){
+  $("#hex-modal").click((event)=> {
+  	$(this).attr("click-hex");
+  	$("click-hex").modal();
+  });
+});
