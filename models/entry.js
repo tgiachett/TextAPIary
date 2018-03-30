@@ -9,10 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true
     },
     comBody: {
-      type: DataTypes.TEXT,
-      alloNull: false,
-      validate: { len: [1] },
-      description: DataTypes.TEXT
+      type: DataTypes.STRING
     },
     category: {
       type: DataTypes.STRING,
