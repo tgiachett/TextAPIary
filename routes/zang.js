@@ -23,13 +23,13 @@ router.post("/incoming", (req, res) => {
       //entry tree
       //if there's a tbl name
       if(smsArr[2]) {
-        console.log("switch works tbl true")
+        console.log("switch works tag true")
         //make an object for the entry into that tbl
-        // smsComObj.tbl = smsArr[2];
+        smsComObj.tag = smsArr[2];
         smsComObj.comBody = smsArr[1];
         //if there's a password set for that table, store it
         if(smsArr[3]) {
-          smsComObj.tblPass = smsArr[3];
+          smsComObj.tagPass = smsArr[3];
         }
         console.log(smsComObj);
         
