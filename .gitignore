@@ -59,3 +59,5 @@ typings/
 
 # unnecessary apple folder info
 **/.DS_Store
+/public/assets/images/.DS_Store
+/public/assets/.DS_Store
