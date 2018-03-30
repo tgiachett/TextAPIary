@@ -3,7 +3,12 @@
 
 module.exports = function(sequelize, DataTypes) {
   const Entry = sequelize.define("Entry", {
-    body: {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    comBody: {
       type: DataTypes.TEXT,
       alloNull: false,
       validate: { len: [1] },
@@ -12,6 +17,25 @@ module.exports = function(sequelize, DataTypes) {
     category: {
       type: DataTypes.STRING,
       defaultValue: "Public"
+    },
+    tbl: {
+      type: DataTypes.STRING,
+      alloNull: false
+    },
+    tblPass: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    SmsSid: {
+      type: DataTypes.STRING,
+      alloNull: false
+    },
+    from: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    wholeBody: {
+      type: DataTypes.TEXT
     }
   }, 
   {
