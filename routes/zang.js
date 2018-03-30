@@ -32,7 +32,7 @@ router.post("/incoming", (req, res) => {
         models.Entry.create(smsComObj)
         //get the id of the entry just entered
         let thisId = models.Entry.findAll({
-          attribute: id
+          attribute: "id"
           },
           {
           where: {
