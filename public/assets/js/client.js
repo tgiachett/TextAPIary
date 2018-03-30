@@ -14,6 +14,7 @@ $(document).ready(function(){
 		let from;
   	if (typeof phoneNumber === "number" && phoneNumber.toString().length === 10) {
   		from = "+1" + phoneNumber;
+  		console.log(from);
   		$("html, body").animate({
 	        scrollTop: $(".center-me").offset().top
 	    }, 1000);
