@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     tbl: {
       type: DataTypes.STRING,
-      alloNull: false
+      allowNull: false
     },
     tblPass: {
       type: DataTypes.STRING,
@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     SmsSid: {
       type: DataTypes.STRING,
-      alloNull: false
+      allowNull: false
     },
     from: {
       type: DataTypes.STRING,

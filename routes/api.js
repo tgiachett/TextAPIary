@@ -5,7 +5,7 @@ const router  = express.Router();
 
 router.get("/all", (req, res) => {
   models.Entry.findAll({}).then((dbEntries) => {
-    res.json({dbEntries});
+    res.json(dbEntries);
   });
 });
 
@@ -15,7 +15,7 @@ router.get("/from_:from", (req, res) => {
 			from: req.params.from
 		}
 	}).then((dbEntriesFrom) => {
-		res.json({dbEntriesFrom});
+		res.json(dbEntriesFrom);
 	});
 });
 
@@ -29,16 +29,8 @@ router.get("/entry_:id", (req, res) => {
 	});
 });
 
-// router.post("/new", (req, res) => {
-// ...
-// 	models.Entry.create({
-// ...
-// 	}).then((dbEntry) => {
-// 		res.json(dbEntry)
-// 	});
-// });
-
 router.put("/update", (req, res) => {
+	console.log(req.body);
 	models.Entry.update(req.body, {
 		where: {
 			id: req.body.id
