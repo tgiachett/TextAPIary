@@ -10,13 +10,18 @@ $(document).ready(function(){
 //ACCEPT PHONE NUMBER
   $("#phone-login-btn").click((event) => {
   	event.preventDefault();
+ 
 		let phoneNumber = $("#insert-phone"); 
 		let from;
   	if (typeof phoneNumber === "number" && phoneNumber.toString().length === 10) {
   		from = "+1" + phoneNumber;
+  		$("html, body").animate({
+	        scrollTop: $(".center-me").offset().top
+	    }, 1000);
   	}
   	else {
   		console.log("Not a valid phone number.");
+  		//USER VALIDATION HERE
   	}
   	$.ajax({
   		method: "GET",
