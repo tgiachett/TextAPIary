@@ -30,20 +30,21 @@ router.post("/incoming", (req, res) => {
         //   smsComObj.tblPass = smsArr[3];
         // }
         console.log(smsComObj);
-        models.Entry.create({
+        models.Entry.create(
           smsComObj
+        ).then(() => {
+          //get the id of the entry just entered
+          let thisId = models.Entry.findAll({
+            attribute: "id"
+            },
+            {
+            where: {
+              SmsSid: smsComObj.SmsSid
+            }
+          });
+          // send out the response text
+          sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${thisId}`);
         });
-        //get the id of the entry just entered
-        let thisId = models.Entry.findAll({
-          attribute: "id"
-          },
-          {
-          where: {
-            SmsSid: smsComObj.SmsSid
-          }
-        });
-        // send out the response text
-        sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${thisId}`);
         
       // } else { 
           // validate: if there is no table name given, send error
