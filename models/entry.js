@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     tbl: {
       type: DataTypes.STRING,
-      alloNull: false
+      alloNull: true
     },
     tblPass: {
       type: DataTypes.STRING,
