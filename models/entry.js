@@ -14,11 +14,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: "Public"
     },
-    tag: {
+    tbl: {
       type: DataTypes.STRING,
       alloNull: false
     },
-    tagPass: {
+    tblPass: {
       type: DataTypes.STRING,
       allowNull: true
     },

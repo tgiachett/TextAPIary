@@ -19,17 +19,17 @@ router.post("/incoming", (req, res) => {
   const smsArr = msgInfo.Body.split(" ");
   console.log(smsArr[2])
   switch(smsArr[0].toLowerCase()) {
-    case "entry":
+    case "post":
       //entry tree
       //if there's a tbl name
       if(smsArr[2]) {
         console.log("switch works tag true")
         //make an object for the entry into that tbl
-        smsComObj.tag = smsArr[2];
+        smsComObj.tbl = smsArr[2];
         smsComObj.comBody = smsArr[1];
         //if there's a password set for that table, store it
         if(smsArr[3]) {
-          smsComObj.tagPass = smsArr[3];
+          smsComObj.tblPass = smsArr[3];
         }
         console.log(smsComObj);
         
@@ -44,7 +44,7 @@ router.post("/incoming", (req, res) => {
             }
             
           }).then(result => {
-            
+            console.log(result)
             sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${result.id}`);
           })
           // send out the response text
@@ -58,7 +58,7 @@ router.post("/incoming", (req, res) => {
           sms.sendSms(smsComObj.from, noTblErr);
       }
       break;
-    case "query":
+    case "get":
       switch(smsArr[1]) {
         case "date": 
           //date querying logic NOT QUITE SURE HOW TO DO THIS YET
@@ -69,51 +69,32 @@ router.post("/incoming", (req, res) => {
           //   }
           // })
           break;
-        case "kywrd":
-          //keyword search logic 
-          smsComObj.keyWordSearch = smsArr[2];
-          
-          let kywrdSrchRes = Post.findAll({
-            attribute: comBody
-          },
-          {
-            where: {
-              authorId: {
-                [Op.contains]: smsComObj.keyWordSearch
-              }
-            }
-          });
-          sms.sendSms(smsComObj.from, `Entry: ${kywrdSrchRes}`)
-          break;
         case "tbl":
-          // search for tags/tables
-          smsComObj.tblSearch = smsArr[2];
-          if(smsArr[3]) {
-            //look up by tag/table and ID if an ID is present
-            smsComObj.idSearch = smsArr[3];
-            let idSrchRes = models.Entry.findAll({
-              attribute: comBody
-            },
-            {
-              where: {
-                id: smsComObj.idSearch
-              }
-            })
-            sms.sendSms(smsComObj.from, `Entry: ${idSrchRes}`);
+          //keyword search logic 
+          smsComObj.tblSrch = smsArr[2];
+          
+          let tblSrchRes = {};
+          // the number of the search result is smsArr[3]
+          if(!smsArr[3]) {
+            sms.sendSms(smsComObj.from, `Error: no entry number specified`)
           }
-          let tblSrchRes = models.Entry.findAll({
-            attribute: comBody
-          },
+          tblSrchRes.resI = parseInt(smsArr[3]) - 1;
+          models.Entry.findAll(
           {
             where: {
-              tbl: smsComObj.tblSearch
+              tbl: smsComObj.tblSrch
             }
-          })
-          sms.sendSms(smsComObj.from, `Entry: ${tblSrchRes}`);
-
-          break;       
+          }).then((result) => {
+            // let shortDate = result[tblSrchRes.resI].createdAt.split(" ")
+            // shortDate = shortDate.slice(0,4)
+            console.log(result[tblSrchRes.resI].createdAt)
+            sms.sendSms(smsComObj.from, `${result[tblSrchRes.resI].createdAt}: ${result[tblSrchRes.resI].comBody}`)
+          });
+          
+          break;  
       }
       break;
+    case "put":
     case "help":
       //return help options to user
       const helpString = "help commands placeholder";
