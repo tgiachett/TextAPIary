@@ -1,6 +1,6 @@
 # TextAPIary
 
-*Your Daily Direct to Database Diary!*
+*Daily Direct-to-Database Diary!*
 
 ## Getting Started
 
