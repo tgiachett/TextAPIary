@@ -15,42 +15,48 @@ router.post("/incoming", (req, res) => {
   smsComObj.SmsSid = msgInfo.SmsSid;
   smsComObj.wholeBody = msgInfo.Body;
   // smsComObj.date = moment()
+  
   const smsArr = msgInfo.Body.split(" ");
+  console.log(smsArr[2])
   switch(smsArr[0].toLowerCase()) {
     case "entry":
       //entry tree
       //if there's a tbl name
-      // if(smsArr[2]) {
-        
+      if(smsArr[2]) {
+        console.log("switch works tbl true")
         //make an object for the entry into that tbl
         // smsComObj.tbl = smsArr[2];
         smsComObj.comBody = smsArr[1];
         //if there's a password set for that table, store it
-        // if(smsArr[3]) {
-        //   smsComObj.tblPass = smsArr[3];
-        // }
+        if(smsArr[3]) {
+          smsComObj.tblPass = smsArr[3];
+        }
         console.log(smsComObj);
+        
         models.Entry.create(
           smsComObj
         ).then(() => {
           //get the id of the entry just entered
-          let thisId = models.Entry.findAll({
-            attribute: "id"
-            },
+          models.Entry.findOne(
             {
             where: {
               SmsSid: smsComObj.SmsSid
             }
-          });
+            
+          }).then(result => {
+            
+            sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${result.id}`);
+          })
           // send out the response text
-          sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${thisId}`);
+          // sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${thisId}`);
         });
         
-      // } else { 
+      } else { 
+        console.log("switch works tbl false")
           // validate: if there is no table name given, send error
-          // let noTblErr = "Please give tbl arg after message to store in or create table";
-          // sms.sendSms(smsComObj.from, noTblErr);
-      // }
+          let noTblErr = "Please give tbl arg after message to store in or create table";
+          sms.sendSms(smsComObj.from, noTblErr);
+      }
       break;
     case "query":
       switch(smsArr[1]) {
