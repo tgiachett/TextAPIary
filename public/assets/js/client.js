@@ -1,3 +1,4 @@
+
 //TRIGGER DIARY TEXT MODAL
 $(document).ready(function(){
   $("#hex-modal").click((event)=> {
@@ -101,19 +102,3 @@ $("#home").click((event) => {
  //  		location.reload();
  //  	});
  //  });
-
-//FOR RELOADING LOCATION TO UPDATE PAGE
-// $(function () {
-// 	$("#hexmodal").click((event) => {
-// 		event.preventDefault();
-// 		var id = $(this).attr("click-hex");
-// 		$.ajax(somestuff, {
-// 			//...
-// 		}).then(function () {
-// 			location.reload();
-// 		});
-// 	});
-// });
-
-//MOCHA CHAI TEST EXPORT
-// module.exports = clientJS;
