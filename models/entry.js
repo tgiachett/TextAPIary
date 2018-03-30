@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
       alloNull: false
     },
     from: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     wholeBody: {

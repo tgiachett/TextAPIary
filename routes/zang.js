@@ -11,7 +11,7 @@ router.post("/incoming", (req, res) => {
   let msgInfo = req.body;
   
   // merge request body onto smsComObj
-  smsComObj.from = msgInfo.from;
+  smsComObj.from = msgInfo.From;
   smsComObj.SmsSid = msgInfo.SmsSid;
   smsComObj.wholeBody = msgInfo.Body;
   // smsComObj.date = moment()
