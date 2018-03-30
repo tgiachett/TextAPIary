@@ -1,465 +1,443 @@
-<!-- ** NAV BAR ========================================================== -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <nav class="navbar navbar-default">
-                <div class="navbar-collapse collapse" id="navbar">
-                    <!-- Left Side Navbar Links -->
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="/surf/">Public Diaries</a>
-                        </li>
-                        <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        <!-- <li>
-                            <a href="/faq/">FAQ</a>
-                        </li> -->
-                    </ul>
-                    <!-- Right Side Social Links -->
-                    <ul class="nav navbar-nav navbar-right social">
-                        <a href="http://www.facebook.com" target="_blank" class="text-center">
-                            <i class="fa fa-facebook"></i> 
-                        </a>
-                        <a href="http://www.twitter.com/intent/tweet?text=Check+out+TextAPIary+-+A+free+online+diary+@+https://github.com/tgiachett/TextAPIary" target="_blank" class="text-center">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a href="http://www.linkedin.com" target="_blank" class="text-center">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-</div>	
-
-
-<!-- ** MAIN BODY ======================================================== -->
-<main class="container">
-    
-    <div class="row" id="first_row">
-        <!-- ** TITLE DIV -->
-        <div class="col-md-6">
-            <div class="box_in" id="title_div">
-                <img src="https://static.wixstatic.com/media/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png/v1/fill/w_600,h_343,al_c,usm_0.66_1.00_0.01/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png" alt="logo" class="text-center">
-                <!-- <img src="http://thehivebulkfoods.com/wp-content/uploads/2017/03/thehive_web-horizontal-yellow.png" alt="logo" class="text-center"> -->
+    <!-- ** NAV BAR ========================================================== -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-collapse collapse" id="navbar">
+                        <div class="navbar-header">
+                                <a class="navbar-brand">daily direct-to-database diary</a>
+                        </div>
+                        
+                        <!-- Left Side Navbar Links -->
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/" id="home">Home</a>                      
+                            </li>
+                        </ul>
+                        <!-- Right Side Social Links -->
+                        <ul class="nav navbar-nav navbar-right social">
+                            <a href="http://www.twitter.com/intent/tweet?text=Check+out+TextAPIary+-+A+free+online+diary+@+https://github.com/tgiachett/TextAPIary" target="_blank" class="text-center">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
+    </div>	
 
-        <!-- ** LOGIN DIV -->
-        <div class="col-md-6">
-            <div class="box_in" id="login_box">
-                <div class="row">
-                    <!-- Left Side -->
-                    <div class="col-lg-5 borderleft">
-                        <br>
-                        <h2>Diary Log In</h2>
-                        <br>
-                        <br>
-                    </div>
-                    <!-- Right Side -->
-                    <div class="col-lg-7">
-                        <h3 class="text-center">Instert Phone Number</h3>
-                        <form class="form_class" action="/edit/" method="post" name="login">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <label for ="exampleInputName2"><i class="fa fa-phone text-center" id="phone"></i></label>
-                                </div>    
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="exampleInputName2" name="e" placeholder="(XXX) XXX-XXXX">
+
+    <!-- ** MAIN BODY ======================================================== -->
+    <main class="container">
+        
+        <div class="row" id="first_row">
+            <!-- ** TITLE DIV -->
+            <div class="col-md-6">
+                <div class="box_in" id="title_div">
+                    <img src="https://static.wixstatic.com/media/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png/v1/fill/w_600,h_343,al_c,usm_0.66_1.00_0.01/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png" alt="logo" class="text-center">
+                </div>
+            </div>
+
+            <!-- ** LOGIN DIV -->
+            <div class="col-md-6">
+                <div class="box_in" id="login_box">
+                    <div class="row">
+                        <!-- Left Side -->
+                        <div class="col-lg-5 borderleft">
+                            <h2>Diary Log In</h2>
+                            <h3 class="text-center" id="loginText">Instert phone number to see your entries</h3>
+                        </div>
+                        <!-- Right Side -->
+                        <div class="col-lg-7">
+                            
+                            <form class="form_class" action="/edit/" method="post" name="login">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <label for ="insert-phone"><i class="fa fa-phone text-center" id="phone"></i></label>
+                                    </div>    
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="insert-phone" name="phone-number" placeholder="(XXX) XXX-XXXX">
+                                    </div>
                                 </div>
-                            </div>
-                            <input type="hidden" name="login" value="1">
-                            <div class="row">
-                                <div class="col-lg-3"></div>
-                                <div class="col-lg-9">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fa fa-user-o"> Login</i>
-                                            </button>
+                                <input type="hidden" name="login" value="1">
+                                <div class="row">
+                                    <div class="col-lg-3"></div>
+                                    <div class="col-lg-9">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <button type="submit" class="btn btn-default" id="phone-login-btn">
+                                                    <i class="fa fa-user-o"> Login</i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>    
-        </div>
-    </div>
-
-
-    <!-- ** DESCRIPTION DIV -->
-    <div class="row mt">
-        <div class="col-lg-12">
-            <div class="box_in">
-                <h1 class="heading text-center">Welcome to Text APIary</h1>
-                <div class="line"></div>
-                <!-- Website Description -->
-                <div class="row">
-                    <div class="col-lg-offset-2 col-lg-8 text-center">
-                        <p>
-                            Everyone can have their own personal online diary. It's free at Text APIary! Best part: you can create it via text - what a convenience!
-                            Log in with your phone number to check out the diary you have created. Or create your first diary by texting +1 (989) 256-0937. We will host your diary online at no cost.
-                            If you have any suggestions or problems with this Text Diary, please <a href="/contact/">let us know</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- ** HEXAGON HIVE DIV -->
-    <div>
-        <div class="center-me">
-            <div class="row">
-                <div class="hex lower no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex lower">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex lower">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex lower">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex lower no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="hex lower no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex lower">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>   
-                <div class="hex lower">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex lower">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>   
-                <div class="hex lower no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-            </div>    
-            <div class="row">
-                <div class="hex lower no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex lower ">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>   
-                <div class="hex lower">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-        
-
-                <div class="hex no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex lower ">
-                    <div><img src="http://www.mrm.org/wp-content/uploads/2017/02/FriendlyBee.png" alt="bee" id="flying-bee"></div>
-                    <!-- <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div> -->
-                </div>
-                <div class="hex no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-                <div class="hex lower no-show">
-                    <div class="left"></div>
-                    <div class="middle"></div>
-                    <div class="right"></div>
-                </div>
-            </div> 
-        </div>            
-    </div>
-
-    <!-- ** HEXAGON MODAL DIV -->    
-    <div class="modal" id="hex-modal">
-        <div class="row">
-            <!-- Hexagon -->
-            <div class="col-lg-1"></div>
-            <div class="col-lg-6 modal-content">
-                <div class="modal-left"></div>
-                <div class="modal-middle">
-                    <!-- Diary Entry -->
-                    <div class="box_in" id="selected-entry">*Diary Entry Here*</div>
-                    <!-- Buttons -->
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <button type="submit" class="btn btn-default modal-button">
-                                <i class="fa fa-upload" id="update-hex"> Update</i>
-                            </button>
+                            </form>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-6">
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+
+        <!-- ** DESCRIPTION DIV -->
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="box_in">
+                    <h1 class="heading text-center">Welcome to Text APIary</h1>
+                    <div class="line"></div>
+                    <!-- Website Description -->
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-lg-8 text-center">
+                            <p>
+                                Everyone can have their own personal online diary. It's free at Text APIary! Best part: you can create it via text - what a convenience!
+                                Log in with your phone number to check out the diary you have created. Or create your first diary by texting +1 (989) 256-0937. We will host your diary online at no cost.
+                                If you have any suggestions or problems with this Text Diary, please <a href="/contact/">let us know</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ** HEXAGON HIVE DIV -->
+        <div>
+            <div class="center-me">
+                <div class="row">
+                    <div class="hex lower no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex lower">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex lower">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex lower">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex lower no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="hex lower no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex lower">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>   
+                    <div class="hex lower">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex lower">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>   
+                    <div class="hex lower no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                </div>    
+                <div class="row">
+                    <div class="hex lower no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex lower ">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>   
+                    <div class="hex lower">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+            
+
+                    <div class="hex no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex lower ">
+                        <div><img src="http://www.mrm.org/wp-content/uploads/2017/02/FriendlyBee.png" alt="bee" id="flying-bee"></div>
+                        <!-- <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div> -->
+                    </div>
+                    <div class="hex no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="hex lower no-show">
+                        <div class="left"></div>
+                        <div class="middle"></div>
+                        <div class="right"></div>
+                    </div>
+                </div> 
+            </div>            
+        </div>
+
+        <!-- ** HEXAGON MODAL DIV -->    
+        <div class="" id="hex-modal">
+            <div class="row">
+                <!-- Hexagon -->
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 modal-content">
+                    <div class="modal-left"></div>
+                    <div class="modal-middle">
+                        <!-- Diary Entry -->
+                        <div class="box_in" id="selected-entry">*Diary Entry Here*</div>
+                        <!-- Buttons -->
+                        <div class="row">
                             <button type="submit" class="btn btn-default modal-button">
                                 <i class="fa fa-trash" id="delete-hex"> Delete</i>
                             </button>
                         </div>
+                    </div>    
+                    <div class="modal-right"></div>
+                </div>  
+                <!-- Input Box -->
+                <div class="col-lg-4">
+                    <div class="row">
+                            <label for="inputText"><h3>Edit Your Entry</h3></label>
+                            <br>
+                        <textarea type="text" class="form-control" id="inputText" name="updated-entry" placeholder="Edit Entry Here..."></textarea>
                     </div>
-                </div>    
-                <div class="modal-right"></div>
-            </div>  
-            <!-- Input Box -->
-            <div class="col-lg-4">
-                <div class="row">
-                        <label for="exampleInputTest"><h3>Edit Your Entry</h3></label>
-                        <br>
-                    <textarea type="text" class="form-control" id="exampleInputTest" name="e" placeholder="Edit Entry Here..."></textarea>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <button type="submit" class="btn btn-default" id="submit-edit">
-                            <i class="fa fa-send"> Submit</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="col-lg-1"></div>
-        </div>  
-    </div>
-    
-
-    <!-- ** PUBLIC DIARIES DIV -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="box_in" id="pd_box">
-                <h1 class="heading text-center">Public Diaries</h1>
-                <h2 class="text-center">[*coming soon*]</h2>
-                <div class="line"></div>
-                <!-- Public Diaries -->
-                <div class="row">
-                    <!-- Public Diary #1 -->
-                    <div class="col-lg-3 pds" id="pd1">
-                        <div class="box_in_small">
-                            <div class="tag">
-                                <a href="/read/d/pd1/title1">
-                                    <i class="fa fa-user"> EnlightenDaily</i>
-                                </a>
-                            </div>
-                            <a href="/read/d/pd1/title1">
-                                <h4>
-                                    <i class="fa fa-book"> How to Grow Our Brand</i>
-                                </h4>
-                            </a>
-                            <a href="/read/e/pbs1">Mmmmm.</a>
-                            <div class="line2"></div>
-                            221 entries
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <button type="submit" class="btn btn-default" id="submit-edit">
+                                <i class="fa fa-send"> Submit</i>
+                            </button>
                         </div>
                     </div>
-                    <!-- Public Diary #2 -->
-                    <div class="col-lg-3 pds" id="pd2">
+                </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>  
+        </div>
+        
+
+        <!-- ** PUBLIC DIARIES DIV -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box_in" id="pd_box">
+                    <h1 class="heading text-center">Public Diaries</h1>
+                    <h2 class="text-center">[*coming soon*]</h2>
+                    <div class="line"></div>
+                    <!-- Public Diaries -->
+                    <div class="row">
+                        <!-- Public Diary #1 -->
+                        <div class="col-lg-3 pds" id="pd1">
                             <div class="box_in_small">
                                 <div class="tag">
+                                    <a href="/read/d/pd1/title1">
+                                        <i class="fa fa-user"> EnlightenDaily</i>
+                                    </a>
+                                </div>
+                                <a href="/read/d/pd1/title1">
+                                    <h4>
+                                        <i class="fa fa-book"> How to Grow Our Brand</i>
+                                    </h4>
+                                </a>
+                                <a href="/read/e/pbs1">Mmmmm.</a>
+                                <div class="line2"></div>
+                                221 entries
+                            </div>
+                        </div>
+                        <!-- Public Diary #2 -->
+                        <div class="col-lg-3 pds" id="pd2">
+                                <div class="box_in_small">
+                                    <div class="tag">
+                                        <a href="/read/d/pd1/title2">
+                                            <i class="fa fa-user"> UNCCodingBootcamp</i>
+                                        </a>
+                                    </div>
                                     <a href="/read/d/pd1/title2">
-                                        <i class="fa fa-user"> UNCCodingBootcamp</i>
+                                        <h4>
+                                            <i class="fa fa-book"> Notes From Week 15</i>
+                                        </h4>
                                     </a>
+                                    <a href="/read/e/pbs2">Advanced JavaScript</a>
+                                    <div class="line2"></div>
+                                    18 entries
                                 </div>
-                                <a href="/read/d/pd1/title2">
-                                    <h4>
-                                        <i class="fa fa-book"> Notes From Week 15</i>
-                                    </h4>
-                                </a>
-                                <a href="/read/e/pbs2">Advanced JavaScript</a>
-                                <div class="line2"></div>
-                                18 entries
-                            </div>
-                    </div>
-                    <!-- Public Diary #3 -->
-                    <div class="col-lg-3 pds" id="pd3">
-                            <div class="box_in_small">
-                                <div class="tag">
+                        </div>
+                        <!-- Public Diary #3 -->
+                        <div class="col-lg-3 pds" id="pd3">
+                                <div class="box_in_small">
+                                    <div class="tag">
+                                        <a href="/read/d/pd1/title3">
+                                            <i class="fa fa-user"> WebDevTalk</i>
+                                        </a>
+                                    </div>
                                     <a href="/read/d/pd1/title3">
-                                        <i class="fa fa-user"> WebDevTalk</i>
+                                        <h4>
+                                            <i class="fa fa-book"> Let's Talk Agile</i>
+                                        </h4>
                                     </a>
+                                    <a href="/read/e/pbs3">Agile Ninjas Only</a>
+                                    <div class="line2"></div>
+                                    3 entries
                                 </div>
-                                <a href="/read/d/pd1/title3">
-                                    <h4>
-                                        <i class="fa fa-book"> Let's Talk Agile</i>
-                                    </h4>
-                                </a>
-                                <a href="/read/e/pbs3">Agile Ninjas Only</a>
-                                <div class="line2"></div>
-                                3 entries
-                            </div>
-                    </div>
-                    <!-- Public Diary #4 -->
-                    <div class="col-lg-3 pds" id="pd4">
-                            <div class="box_in_small">
-                                <div class="tag">
+                        </div>
+                        <!-- Public Diary #4 -->
+                        <div class="col-lg-3 pds" id="pd4">
+                                <div class="box_in_small">
+                                    <div class="tag">
+                                        <a href="/read/d/pd1/title4">
+                                            <i class="fa fa-user"> codingNinja</i>
+                                        </a>
+                                    </div>
                                     <a href="/read/d/pd1/title4">
-                                        <i class="fa fa-user"> codingNinja</i>
+                                        <h4>
+                                            <i class="fa fa-book"> Projects I've Taken On</i>
+                                        </h4>
                                     </a>
+                                    <a href="/read/e/pbs4">Things happen</a>
+                                    <div class="line2"></div>
+                                    39 entries
                                 </div>
-                                <a href="/read/d/pd1/title4">
-                                    <h4>
-                                        <i class="fa fa-book"> Projects I've Taken On</i>
-                                    </h4>
-                                </a>
-                                <a href="/read/e/pbs4">Things happen</a>
-                                <div class="line2"></div>
-                                39 entries
-                            </div>
+                        </div>
+                    <!-- Public Diaries Button -->
+                    <div class="row" id="button_row">
+                        <div class="col-lg-12">
+                            <a href="/surf/" class="style_button_b">Read public diaries</a>
+                        </div>
                     </div>
-                <!-- Public Diaries Button -->
-                <div class="row" id="button_row">
-                    <div class="col-lg-12">
-                        <a href="/surf/" class="style_button_b">Read public diaries</a>
                     </div>
                 </div>
-                </div>
             </div>
         </div>
-    </div>
+        
+        
+    </main>
+    <!-- ** END MAIN BODY ==================================================== -->
     
-    
-</main>
-<!-- ** END MAIN BODY ==================================================== -->
 
-
-<!-- ** FOOTER =========================================================== -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <!-- App Description -->
-            <div class="col-lg-4 text-left">
-                <div id="left_footer" class="text-center">
-                    <a href="#" id="footer_logo">
-                        <img src="https://static.wixstatic.com/media/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png/v1/fill/w_600,h_343,al_c,usm_0.66_1.00_0.01/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png" alt="footer logo" id="footer_logo1">
-                    </a>
-                    <br>
-                    <br>
+    <!-- ** FOOTER =========================================================== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- App Description -->
+                <div class="col-lg-4 text-left">
+                    <div id="left_footer" class="text-center">
+                        <a href="#" id="footer_logo">
+                            <img src="https://static.wixstatic.com/media/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png/v1/fill/w_600,h_343,al_c,usm_0.66_1.00_0.01/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png" alt="footer logo" id="footer_logo1">
+                        </a>
+                        <br>
+                        <br>
+                    </div>
+                    Text APIary - Create a free diary via text messaging.
+                    We will host your diaryonline at no cost. Create your own public or private diary.
+                    Try out our group diaries with your peers.
                 </div>
-                Text APIary - Create a free diary via text messaging.
-                We will host your diaryonline at no cost. Create your own public or private diary.
-                Try out our group diaries with your peers.
-            </div>
-            <!-- Find Us -->
-            <div class="col-lg-4 text-center" id="find_us">
-                <h4>Creators</h4>
-                <p>Find us on GitHub at:</p>
-                <img src="./public/assets/images/31292513.jpeg" alt="Contact Person" class="personimg"> <a href="https://github.com/tgiachett" target="_blank">Tobia Giachetti</a>  
-                <img src="./public/assets/images/IMG_2609.JPG" alt="Contact Person" class="personimg"> <a href="https://github.com/bettijung" target="_blank">Bettina Junghahn</a>  
-                <br>
-                <img src="./public/assets/images/PP.jpg" alt="Contact Person" class="personimg"> <a href="https://github.com/paulaperoutka" target="_blank">Paula Peroutka</a>  
-                <img src="./public/assets/images/alex.jpeg" alt="Contact Person" class="personimg"> <a href="https://github.com/MartyFromCary" target="_blank">Alex Florian Prescott</a>  
-            </div>
-            <!-- Try out our app -->
-            <div class="col-lg-4 text-left">
-                <h4>Try out the (beta) app for Android</h4>
-                <h5>[*Coming soon*]</h5>
-                <br>
-                <a href="https://play.google.com/store/apps">textAPIary.org app</a>
-                <br>
-                <br>
-                <small>Google Play and the Goodle Play logo are trademarks of Google Inc.</small>
-            </div>
-        </div>
-        <!-- Copyright -->
-        <div class="row">
-            <div class="social_buttons">
-                <div class="col-lg-6"></div>
-                <div class="col-lg-6 text-right">
-                    © 2018 Copyright. All rights reserved.
+                <!-- Find Us -->
+                <div class="col-lg-4 text-center" id="find_us">
+                    <h4>Creators</h4>
+                    <p>Find us on GitHub at:</p>
+                    <img src="https://avatars2.githubusercontent.com/u/31292513?s=460&v=4" alt="Contact Person" class="personimg"> <a href="https://github.com/tgiachett" target="_blank">Tobia Giachetti</a>  
+                    <img src="https://avatars2.githubusercontent.com/u/31110204?s=460&v=4" alt="Contact Person" class="personimg"> <a href="https://github.com/bettijung" target="_blank">Bettina Junghahn</a>  
                     <br>
-                    <small>Questions/feedback/problems? 
-                        <a href="/contact/">Contact us</a>
-                    </small>
+                    <img src="https://avatars3.githubusercontent.com/u/31296112?s=460&v=4" alt="Contact Person" class="personimg"> <a href="https://github.com/paulaperoutka" target="_blank">Paula Peroutka</a>  
+                    <img src="https://avatars3.githubusercontent.com/u/31100098?s=460&v=4" alt="Contact Person" class="personimg"> <a href="https://github.com/MartyFromCary" target="_blank">Alex Florian Prescott</a>  
+                </div>
+                <!-- Try out our app -->
+                <div class="col-lg-4 text-left">
+                    <h4>Try out the (beta) app for Android</h4>
+                    <h5>[*Coming soon*]</h5>
+                    <br>
+                    <a href="https://play.google.com/store/apps">textAPIary.org app</a>
+                    <br>
+                    <br>
+                    <small>Google Play and the Goodle Play logo are trademarks of Google Inc.</small>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="row">
+                <div class="social_buttons">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-6 text-right">
+                        © 2018 Copyright. All rights reserved.
+                        <br>
+                        <small>Questions/feedback/problems? 
+                            <a href="/contact/">Contact us</a>
+                        </small>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
