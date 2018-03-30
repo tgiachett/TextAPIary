@@ -11,7 +11,17 @@
 }
     .navbar-collapse {
         padding-left: 0;
+        text-align: center;
     }
+        .navbar-header {
+            display:inline-block;
+            float:none;
+        }   
+        .navbar-brand {
+            color: white !important;
+            font-family: 'Sacramento', cursive;
+            font-size: 35px;
+        }
         .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
             background: transparent;
         }
@@ -110,6 +120,10 @@ body.index, body.page {
             .borderleft {
                 border-right: 2px solid rgba(255, 255, 255, 0.55);
             }
+                #loginText {
+                    font-size: 18px;
+                    margin-bottom: 40px;
+                }
                 /* .form_class {
                 } */
                     .form_class .row {
@@ -283,12 +297,13 @@ body.index, body.page {
             }
                 #selected-entry {
                     margin-top: 130px;
+                    background-color: black;
                 }
                 .modal-button {
                     margin-top: 80px;
-                    border: 2px solid darkgray;
+                    border: 2px solid darkgrey;
                     border-radius: 5px;
-                    color: darkgray;
+                    color: darkgrey;
                     font-size: 14px;
                     font-weight: 300;
                     line-height: 29px;
