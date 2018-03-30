@@ -9,4 +9,36 @@ router.get("/all", (req, res) => {
   });
 });
 
+router.get("/from_:from", (req, res) => {
+	models.Entry.findAll({
+		where: {
+			from: req.params.from
+		}
+	}).then((dbEntriesFrom) => {
+		res.json({dbEntriesFrom});
+	});
+});
+
+router.get("/entry_:id", (req, res) => {
+	models.Entry.findOne({
+		where: {
+			id: req.params.id
+		}
+	}).then((dbEntry) => {
+		res.json(dbEntry)
+	});
+});
+
+// router.post("/new", (req, res) => {
+
+// });
+
+// router.put("/update", (req, res) => {
+
+// });
+
+// router.delete("/entry_:id", (req, res) => {
+
+// });
+
 module.exports = router;
