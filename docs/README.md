@@ -1,8 +1,6 @@
 # TextAPIary
 
-```
-*One Paragraph of project description goes here*
-```
+*Your Daily Direct to Database Diary!*
 
 ## Getting Started
 
