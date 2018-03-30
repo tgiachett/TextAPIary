@@ -20,9 +20,10 @@ router.get("/from_:from", (req, res) => {
 });
 
 router.get("/entry_:id", (req, res) => {
+	console.log(req);
 	models.Entry.findOne({
 		where: {
-			id: req.dbEntries[id - 1]
+			id: req.dbEntries.id
 		}
 	}).then((dbEntry) => {
 		res.json(dbEntry)
