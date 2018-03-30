@@ -30,6 +30,7 @@ router.get("/entry_:id", (req, res) => {
 });
 
 // router.post("/new", (req, res) => {
+// ...
 // 	models.Entry.create({
 // ...
 // 	}).then((dbEntry) => {
