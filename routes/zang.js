@@ -22,7 +22,7 @@ router.post("/incoming", (req, res) => {
     case "post":
       //entry tree
       //if there's a tbl name
-      if(smsArr[2]) {
+      
         console.log("switch works tag true")
         //make an object for the entry into that tbl
         smsComObj.tbl = smsArr[2];
@@ -56,7 +56,7 @@ router.post("/incoming", (req, res) => {
       //     // validate: if there is no table name given, send error
       //     let noTblErr = "ERR: No tbl arg after message";
       //     sms.sendSms(smsComObj.from, noTblErr);
-      }
+      
       break;
     case "get":
       switch(smsArr[1]) {
