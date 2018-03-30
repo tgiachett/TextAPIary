@@ -19,7 +19,7 @@ router.get("/from_:from", (req, res) => {
 	});
 });
 
-router.get("/entry", (req, res) => {
+router.get("/entry_:id", (req, res) => {
 	models.Entry.findOne({
 		where: {
 			id: req.id
