@@ -45,7 +45,7 @@ router.post("/incoming", (req, res) => {
             
           }).then(result => {
             console.log(result)
-            sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${result.id}`);
+            sms.sendSms(smsComObj.from, `Entry logged @ID = ${result.id}`);
           })
           // send out the response text
           // sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${thisId}`);
@@ -54,7 +54,7 @@ router.post("/incoming", (req, res) => {
       } else { 
         console.log("switch works tbl false")
           // validate: if there is no table name given, send error
-          let noTblErr = "Please give tbl arg after message to store in or create table";
+          let noTblErr = "ERR: No tbl arg after message";
           sms.sendSms(smsComObj.from, noTblErr);
       }
       break;
@@ -76,7 +76,7 @@ router.post("/incoming", (req, res) => {
           let tblSrchRes = {};
           // the number of the search result is smsArr[3]
           if(!smsArr[3]) {
-            sms.sendSms(smsComObj.from, `Error: no entry number specified`)
+            sms.sendSms(smsComObj.from, `ERR: no entry number specified`)
           }
           tblSrchRes.resI = parseInt(smsArr[3]) - 1;
           models.Entry.findAll(
@@ -88,13 +88,32 @@ router.post("/incoming", (req, res) => {
             // let shortDate = result[tblSrchRes.resI].createdAt.split(" ")
             // shortDate = shortDate.slice(0,4)
             console.log(result[tblSrchRes.resI].createdAt)
-            sms.sendSms(smsComObj.from, `${result[tblSrchRes.resI].createdAt}: ${result[tblSrchRes.resI].comBody}`)
+            sms.sendSms(smsComObj.from, `${result[tblSrchRes.resI].createdAt}: ${result[tblSrchRes.resI].comBody} @entry#: ${tblSrchRes.resI} @ID:${result[tblSrchRes.resI].id} `)
           });
           
           break;  
       }
       break;
     case "put":
+      //put logic put id text
+      models.Entry.update({
+        comBody: smsArr[2],
+      }, {
+        where: {
+          id: smsArr[1],
+        }
+      });
+      sms.sendSms(smsComObj.from, `Entry upd @ID= ${smsArr[1]} `)
+      break;
+    case "delete":
+      //delete logic
+      models.Entry.destroy({
+        where: {
+          id: smsArr[1]
+        }
+      })
+      sms.sendSms(smsComObj.from, `Entry deleted @ID= ${smsArr[1]}`)
+      break;
     case "help":
       //return help options to user
       const helpString = "help commands placeholder";
@@ -104,12 +123,7 @@ router.post("/incoming", (req, res) => {
     case "auth":
       //auth logic
       break;
-    case "put":
-      //update logic and text response
-      break;
-    case "del":
-      //delete logic and text response
-      break;
+    
     
   }
 });
