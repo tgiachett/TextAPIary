@@ -10,11 +10,12 @@ $(document).ready(function(){
 //ACCEPT PHONE NUMBER
   $("#phone-login-btn").click((event) => {
   	event.preventDefault();
- 
-		let phoneNumber = $("#insert-phone"); 
-		let from;
-  	if (typeof phoneNumber === "number" && phoneNumber.toString().length === 10) {
-  		from = "+1" + phoneNumber;
+  	console.log("Clicked!");
+		let phoneNumber = $("#insert-phone").val().trim();
+		console.log(typeof phoneNumber);
+		let from = "+1";
+  	if (typeof phoneNumber === "string" && phoneNumber.toString().length === 10) {
+  		from += phoneNumber;
   		console.log(from);
   		$("html, body").animate({
 	        scrollTop: $(".center-me").offset().top
