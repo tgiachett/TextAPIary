@@ -224,20 +224,20 @@ body.index, body.page {
         }
             .modal-left {
                 float: left;
-                border-right: 230.8px solid #03F7EB;
-                border-top: 400px solid transparent;
+                border-right: 115.4px solid #03F7EB;
+                border-top: 200px solid transparent;
                 border-bottom: 400px solid transparent;
             }
             .modal-middle {
                 float: left;
-                width: 461.6px;
-                height: 800.1px;
+                width: 230.8px;
+                height: 400.05px;
                 background: #03F7EB;
             }
             .modal-right {
                 float: left;
-                border-left: 230.8px solid #03F7EB;
-                border-top: 400px solid transparent;
+                border-left: 115.4px solid #03F7EB;
+                border-top: 200px solid transparent;
                 border-bottom: 400px solid transparent;
             }
 
