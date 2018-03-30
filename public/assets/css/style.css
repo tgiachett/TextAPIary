@@ -11,7 +11,17 @@
 }
     .navbar-collapse {
         padding-left: 0;
+        text-align: center;
     }
+        .navbar-header {
+            display:inline-block;
+            float:none;
+        }   
+        .navbar-brand {
+            color: white !important;
+            font-family: 'Sacramento', cursive;
+            font-size: 35px;
+        }
         .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
             background: transparent;
         }
@@ -35,7 +45,8 @@
             /* align-content: center; */
         }
             .social i {
-                margin-right: 0px;
+                /* margin-right: 0px; */
+                text-align: center;
             }
                 .social .fa {
                     color: #ffffff;
@@ -49,15 +60,13 @@ body {
     display: block; 
     max-width: 100%;
     height: auto; 
-    /* height: 100%; */
-    /* position: fixed; */
 }
 body.index, body.page {
-    background: url(./public/assets/images/blackComb.jpeg) #0e0e0e no-repeat center center fixed;
+    background: url(https://images.cdn2.stockunlimited.net/preview1300/abstract-honeycomb-background_2011496.jpg) #0e0e0e no-repeat center center fixed;
     background-size: cover;
     font-family: 'Open Sans', sans-serif;
     color: #fff;
-    opacity: 0.9;
+    /* opacity: 0.9; */
 }
     .index p {
         font-size: 15px;
@@ -78,6 +87,7 @@ body.index, body.page {
         border-radius: 5px;
         overflow: hidden;
         margin: 5px auto;
+        opacity: 0.9;
     }
     .box_in h3 {
         color: #fff;
@@ -89,18 +99,31 @@ body.index, body.page {
         /* TITLE DIV ====================================== */
         #title_div {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-            /* min-height: 208px; */
             background: black;
-            opacity: 0.99;
+            opacity: 0.9;
+            text-align: center;
+            padding: 18px;
+            min-height: 160px; 
         }
+            img {
+                width: 350px; 
+                position: relative;
+                margin: auto;
+            }
+
         /* LOG IN DIV ===================================== */
         #login_box {
             padding: 18px 20px 0;
-            min-height: 207px;
+            /* min-height: 207px; */
+            opacity: 0.9;
         }
             .borderleft {
                 border-right: 2px solid rgba(255, 255, 255, 0.55);
             }
+                #loginText {
+                    font-size: 18px;
+                    margin-bottom: 40px;
+                }
                 /* .form_class {
                 } */
                     .form_class .row {
@@ -143,6 +166,16 @@ body.index, body.page {
             .mb {
                 margin-bottom: 9px;
             }
+            #phone {
+                border: 1px solid #ffffff;
+                border-radius: 50%;
+                color: #ffffff;
+                font-size: 14px;
+                line-height: 23px;
+                margin-right: 10px;
+                padding: 3px;
+                width: 34px;
+            }
             .style_button {
                 background: rgba(255, 255, 255, 0);
                 border: 2px solid #03F7EB;
@@ -159,6 +192,7 @@ body.index, body.page {
     .mt {
         margin-top: 20px;
         margin-bottom: 20px;
+        opacity: 0.9;
     }
         h1 .heading {
             color: #fff;
@@ -178,11 +212,13 @@ body.index, body.page {
         margin-top: 30px;
         margin-bottom: 80px;
         position: relative;
+        opacity: 0.95;
     }  
         .hex {
             float: left;
             margin-right: -35px;
             margin-bottom: -65px;
+
         }
         /* .hex:hover {
             transform: scale(1.3); 
@@ -191,7 +227,6 @@ body.index, body.page {
         } */
             .hex .left {
                 float: left;
-                /* width: 0; */
                 border-right: 40.4px solid #03F7EB;
                 border-top: 70px solid transparent;
                 border-bottom: 70px solid transparent;
@@ -204,11 +239,28 @@ body.index, body.page {
             }
             .hex .right {
                 float: left;
-               
                 border-left: 40.4px solid #03F7EB;
                 border-top: 70px solid transparent;
                 border-bottom: 70px solid transparent;
             }
+            /* .hex .left .darker {
+                float: left;
+                border-right: 40.4px solid #52D1DC;
+                border-top: 70px solid transparent;
+                border-bottom: 70px solid transparent;
+            }
+            .hex .middle .darker {
+                float: left;
+                width: 80.8px;
+                height: 140px;
+                background: #52D1DC;
+            }
+            .hex .right .darker {
+                float: left;
+                border-left: 40.4px solid #52D1DC;
+                border-top: 70px solid transparent;
+                border-bottom: 70px solid transparent;
+            } */
             .hex-row {
                 clear: left;
             }
@@ -218,29 +270,63 @@ body.index, body.page {
             .hex.no-show {
                 visibility: hidden;
             }
-        
+            #flying-bee {
+                width: 200px;
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+            }
         #hex-modal {
             margin: 60px;
+            text-align: center;
+            position: relative;
         }
+            .modal-content {
+                background-color: transparent;
+            }
             .modal-left {
                 float: left;
-                border-right: 230.8px solid #03F7EB;
-                border-top: 400px solid transparent;
-                border-bottom: 400px solid transparent;
+                border-right: 115.4px solid #03F7EB;
+                border-top: 200px solid transparent;
+                border-bottom: 200px solid transparent;
             }
             .modal-middle {
                 float: left;
-                width: 461.6px;
-                height: 800.1px;
+                width: 230.8px;
+                height: 400.05px;
                 background: #03F7EB;
             }
+                #selected-entry {
+                    margin-top: 130px;
+                    background-color: black;
+                }
+                .modal-button {
+                    margin-top: 80px;
+                    border: 2px solid darkgrey;
+                    border-radius: 5px;
+                    color: darkgrey;
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 29px;
+                    padding: 1px 11px;
+                }
+                #submit-edit {
+                    background: rgba(255, 255, 255, 0);
+                    border: 2px solid #03F7EB;
+                    border-radius: 5px;
+                    color: #03F7EB;
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 29px;
+                    padding: 1px 11px;
+                    width: 100%;
+                    margin-top: 15px;
+                }
             .modal-right {
                 float: left;
-                border-left: 230.8px solid #03F7EB;
-                border-top: 400px solid transparent;
-                border-bottom: 400px solid transparent;
+                border-left: 115.4px solid #03F7EB;
+                border-top: 200px solid transparent;
+                border-bottom: 200px solid transparent;
             }
-
     #other_box {
         margin: 10px auto;
     }
@@ -248,6 +334,7 @@ body.index, body.page {
     /* *PUBLIC DIARIES DIV ================================ */
     #pd_box {
         margin: 20px auto;
+        opacity: 0.9;
     }
         .box_in_small {
             background: rgba(0, 0, 0, 0.55);
@@ -312,17 +399,10 @@ footer {
         float: left;
         width: 100%;
     }
-        #footer_logo {
-            float: left;
-        }
         #footer_logo1 {
-            width: 80px;
+            width: 160px;
             margin-right: 10px;
             margin-bottom: 3px;
-        }
-        #footer_logo2 {
-            width: 190px;
-            margin-right: 10px;
         }
     #find_us p{
         font-size: 12px;
