@@ -30,15 +30,33 @@ router.get("/entry_:id", (req, res) => {
 });
 
 // router.post("/new", (req, res) => {
-
+// ...
+// 	models.Entry.create({
+// ...
+// 	}).then((dbEntry) => {
+// 		res.json(dbEntry)
+// 	});
 // });
 
-// router.put("/update", (req, res) => {
+router.put("/update", (req, res) => {
+	models.Entry.update(req.body, {
+		where: {
+			id: req.body.id
+		}
+	}).then((dbEntry) => {
+		res.json(dbEntry);
+	});
 
-// });
+});
 
-// router.delete("/entry_:id", (req, res) => {
-
-// });
+router.delete("/entry_:id", (req, res) => {
+	models.Entry.destroy({
+		where: {
+			id: req.params.id
+		}
+	}).then((dbEntry) => {
+		res.json(dbEntry)
+	});
+});
 
 module.exports = router;
