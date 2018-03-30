@@ -12,7 +12,7 @@ router.get("/all", (req, res) => {
 router.get("/from_:from", (req, res) => {
 	models.Entry.findAll({
 		where: {
-			from: req.from
+			from: req.params.from
 		}
 	}).then((dbEntriesFrom) => {
 		res.json({dbEntriesFrom});
@@ -20,7 +20,6 @@ router.get("/from_:from", (req, res) => {
 });
 
 router.get("/entry_:id", (req, res) => {
-	console.log(req);
 	models.Entry.findOne({
 		where: {
 			id: req.params.id
