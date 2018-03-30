@@ -15,22 +15,19 @@
                         <li>
                             <a href="/about/">About</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/faq/">FAQ</a>
-                        </li>
+                        </li> -->
                     </ul>
                     <!-- Right Side Social Links -->
                     <ul class="nav navbar-nav navbar-right social">
-                        <a href="http://www.facebook.com" target="_blank">
+                        <a href="http://www.facebook.com" target="_blank" class="text-center">
                             <i class="fa fa-facebook"></i> 
                         </a>
-                        <a href="http://www.twitter.com/intent/tweet?text=Check+out+TextAPIary+-+A+free+online+diary+@+https://github.com/tgiachett/TextAPIary" target="_blank">
+                        <a href="http://www.twitter.com/intent/tweet?text=Check+out+TextAPIary+-+A+free+online+diary+@+https://github.com/tgiachett/TextAPIary" target="_blank" class="text-center">
                             <i class="fa fa-twitter"></i>
                         </a>
-                        <a href="http://www.plus.google.com" target="_blank">
-                            <i class="fa fa-google-plus"></i> 
-                        </a>
-                        <a href="http://www.linkedin.com" target="_blank">
+                        <a href="http://www.linkedin.com" target="_blank" class="text-center">
                             <i class="fa fa-linkedin"></i>
                         </a>
                     </ul>
@@ -46,36 +43,34 @@
     
     <div class="row" id="first_row">
         <!-- ** TITLE DIV -->
-        <div class="col-lg-6">
+        <div class="col-md-6">
             <div class="box_in" id="title_div">
-                <img src="./public/assets/images/theHive.png" alt="logo">
-                <img src="./public/assets/images/hives.png" alt="logo2">
-
+                <img src="https://static.wixstatic.com/media/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png/v1/fill/w_600,h_343,al_c,usm_0.66_1.00_0.01/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png" alt="logo" class="text-center">
+                <!-- <img src="http://thehivebulkfoods.com/wp-content/uploads/2017/03/thehive_web-horizontal-yellow.png" alt="logo" class="text-center"> -->
             </div>
         </div>
 
         <!-- ** LOGIN DIV -->
-        <div class="col-lg-6">
+        <div class="col-md-6">
             <div class="box_in" id="login_box">
                 <div class="row">
                     <!-- Left Side -->
-                    <div class="col-lg-8 borderleft">
-                        <h3>Diary Login</h3>
+                    <div class="col-lg-5 borderleft">
+                        <br>
+                        <h2>Diary Log In</h2>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- Right Side -->
+                    <div class="col-lg-7">
+                        <h3 class="text-center">Instert Phone Number</h3>
                         <form class="form_class" action="/edit/" method="post" name="login">
                             <div class="row">
-                                <div class="col-lg-3">
-                                    <label for ="exampleInputName2">Email</label>
+                                <div class="col-lg-2">
+                                    <label for ="exampleInputName2"><i class="fa fa-phone text-center" id="phone"></i></label>
                                 </div>    
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="exampleInputName2" name="e">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <label for ="exampleInputEmail2">Password</label>
-                                </div>    
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="exampleInputEmail2" name="p">
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="exampleInputName2" name="e" placeholder="(XXX) XXX-XXXX">
                                 </div>
                             </div>
                             <input type="hidden" name="login" value="1">
@@ -88,27 +83,10 @@
                                                 <i class="fa fa-user-o"> Login</i>
                                             </button>
                                         </div>
-                                        <!-- <div class="col-lg-8">
-                                            <a href="/create/">
-                                                Not Registered?
-                                                <br>
-                                                Sign Up Today
-                                            </a>
-                                        </div> -->
                                     </div>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                    <!-- Right Side -->
-                    <div class="col-lg-4">
-                        <h3>or login using</h3>
-                        <a href="/create/?action=login_facebook" class="btn btn-default style_button mb">
-                            <i class="fa fa-facebook" aria-hidden="true"> Facebook</i>
-                        </a>
-                        <a href="/create/?action=login_google" class="btn btn-default style_button mb">
-                            <i class="fa fa-google-plus" aria-hidden="true"> Google</i>
-                        </a>
                     </div>
                 </div>
             </div>    
@@ -116,7 +94,7 @@
     </div>
 
 
-	<!-- ** DESCRIPTION DIV -->
+    <!-- ** DESCRIPTION DIV -->
     <div class="row mt">
         <div class="col-lg-12">
             <div class="box_in">
@@ -128,7 +106,7 @@
                         <p>
                             Everyone can have their own personal online diary. It's free at Text APIary! Best part: you can create it via text - what a convenience!
                             Log in with your phone number to check out the diary you have created. Or create your first diary by texting +1 (989) 256-0937. We will host your diary online at no cost.
-                            If you have any suggestions or problems with this Text diary, please <a href="/contact/">let us know</a>.
+                            If you have any suggestions or problems with this Text Diary, please <a href="/contact/">let us know</a>.
                         </p>
                     </div>
                 </div>
@@ -268,7 +246,7 @@
                     <div class="right"></div>
                 </div>
                 <div class="hex lower ">
-                    <div><img src="./public/assets/images/theHive.png" alt="bee"></div>
+                    <div><img src="http://www.mrm.org/wp-content/uploads/2017/02/FriendlyBee.png" alt="bee" id="flying-bee"></div>
                     <!-- <div class="left"></div>
                     <div class="middle"></div>
                     <div class="right"></div> -->
@@ -287,21 +265,60 @@
         </div>            
     </div>
 
-        
+    <!-- ** HEXAGON MODAL DIV -->    
     <div class="modal" id="hex-modal">
-        <div class="modal-content">
-            <div class="modal-left"></div>
-            <div class="modal-middle"></div>
-            <div class="modal-right"></div>
-        </div>    
+        <div class="row">
+            <!-- Hexagon -->
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6 modal-content">
+                <div class="modal-left"></div>
+                <div class="modal-middle">
+                    <!-- Diary Entry -->
+                    <div class="box_in" id="selected-entry">*Diary Entry Here*</div>
+                    <!-- Buttons -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <button type="submit" class="btn btn-default modal-button">
+                                <i class="fa fa-upload" id="update-hex"> Update</i>
+                            </button>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-6">
+                            <button type="submit" class="btn btn-default modal-button">
+                                <i class="fa fa-trash" id="delete-hex"> Delete</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>    
+                <div class="modal-right"></div>
+            </div>  
+            <!-- Input Box -->
+            <div class="col-lg-4">
+                <div class="row">
+                        <label for="exampleInputTest"><h3>Edit Your Entry</h3></label>
+                        <br>
+                    <textarea type="text" class="form-control" id="exampleInputTest" name="e" placeholder="Edit Entry Here..."></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <button type="submit" class="btn btn-default" id="submit-edit">
+                            <i class="fa fa-send"> Submit</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>  
     </div>
     
 
     <!-- ** PUBLIC DIARIES DIV -->
-	<div class="row">
+    <div class="row">
         <div class="col-lg-12">
             <div class="box_in" id="pd_box">
                 <h1 class="heading text-center">Public Diaries</h1>
+                <h2 class="text-center">[*coming soon*]</h2>
                 <div class="line"></div>
                 <!-- Public Diaries -->
                 <div class="row">
@@ -391,7 +408,7 @@
     
 </main>
 <!-- ** END MAIN BODY ==================================================== -->
- 
+
 
 <!-- ** FOOTER =========================================================== -->
 <footer>
@@ -399,14 +416,15 @@
         <div class="row">
             <!-- App Description -->
             <div class="col-lg-4 text-left">
-                <div id="left_footer">
+                <div id="left_footer" class="text-center">
                     <a href="#" id="footer_logo">
-                        <img src="./public/assets/images/theHive.png" alt="footer logo" id="footer_logo1">
-                        <img src="./public/assets/images/hives.png" alt="footer logo2" id="footer_logo2">
+                        <img src="https://static.wixstatic.com/media/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png/v1/fill/w_600,h_343,al_c,usm_0.66_1.00_0.01/8b56ba_f0e63d865caa4d63ae8582d47446ab5d~mv2.png" alt="footer logo" id="footer_logo1">
                     </a>
+                    <br>
+                    <br>
                 </div>
-                Everyone can have their own personal online diary - It's free at Text APIary! You can create it via text with your phone!
-                We will host your journal online at no cost. Create your own public or private diary.
+                Text APIary - Create a free diary via text messaging.
+                We will host your diaryonline at no cost. Create your own public or private diary.
                 Try out our group diaries with your peers.
             </div>
             <!-- Find Us -->
@@ -421,8 +439,11 @@
             </div>
             <!-- Try out our app -->
             <div class="col-lg-4 text-left">
-                <h4>Feel free to try out the (beta) app for Android</h4>
+                <h4>Try out the (beta) app for Android</h4>
+                <h5>[*Coming soon*]</h5>
+                <br>
                 <a href="https://play.google.com/store/apps">textAPIary.org app</a>
+                <br>
                 <br>
                 <small>Google Play and the Goodle Play logo are trademarks of Google Inc.</small>
             </div>
