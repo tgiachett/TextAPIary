@@ -23,7 +23,7 @@ router.get("/entry_:id", (req, res) => {
 	console.log(req);
 	models.Entry.findOne({
 		where: {
-			id: req.dbEntries.id
+			id: req.params.id
 		}
 	}).then((dbEntry) => {
 		res.json(dbEntry)
