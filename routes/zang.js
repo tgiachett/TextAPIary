@@ -29,6 +29,7 @@ router.post("/incoming", (req, res) => {
         // if(smsArr[3]) {
         //   smsComObj.tblPass = smsArr[3];
         // }
+        console.log(smsComObj);
         models.Entry.create(smsComObj)
         //get the id of the entry just entered
         let thisId = models.Entry.findAll({
