@@ -51,11 +51,11 @@ router.post("/incoming", (req, res) => {
           // sms.sendSms(smsComObj.from, `Entry Successfully logged with id ${thisId}`);
         });
         
-      } else { 
-        console.log("switch works tbl false")
-          // validate: if there is no table name given, send error
-          let noTblErr = "ERR: No tbl arg after message";
-          sms.sendSms(smsComObj.from, noTblErr);
+      // } else { 
+      //   console.log("switch works tbl false")
+      //     // validate: if there is no table name given, send error
+      //     let noTblErr = "ERR: No tbl arg after message";
+      //     sms.sendSms(smsComObj.from, noTblErr);
       }
       break;
     case "get":
@@ -69,26 +69,22 @@ router.post("/incoming", (req, res) => {
           //   }
           // })
           break;
-        case "tbl":
-          //keyword search logic 
-          smsComObj.tblSrch = smsArr[2];
+        case "id":
+          //id search logic
           
-          let tblSrchRes = {};
+          smsComObj.idSrch = smsArr[2];
+          
+          let idSrchRes = {};
           // the number of the search result is smsArr[3]
-          if(!smsArr[3]) {
-            sms.sendSms(smsComObj.from, `ERR: no entry number specified`)
+          if(!smsArr[2]) {
+            sms.sendSms(smsComObj.from, `ERR: no ID specified`)
           }
-          tblSrchRes.resI = parseInt(smsArr[3]) - 1;
-          models.Entry.findAll(
-          {
-            where: {
-              tbl: smsComObj.tblSrch
-            }
-          }).then((result) => {
+          
+          models.Entry.findById(smsComObj.idSrch).then((result) => {
             // let shortDate = result[tblSrchRes.resI].createdAt.split(" ")
             // shortDate = shortDate.slice(0,4)
-            console.log(result[tblSrchRes.resI].createdAt)
-            sms.sendSms(smsComObj.from, `${result[tblSrchRes.resI].createdAt}: ${result[tblSrchRes.resI].comBody} @entry#: ${tblSrchRes.resI} @ID:${result[tblSrchRes.resI].id} `)
+            console.log(result)
+            sms.sendSms(smsComObj.from, `${result.createdAt}: "${result.comBody}" @ID:${result.id} `)
           });
           
           break;  
@@ -116,7 +112,7 @@ router.post("/incoming", (req, res) => {
       break;
     case "help":
       //return help options to user
-      const helpString = "help commands placeholder";
+      const helpString = "COMMANDS: POST TEXT [TAG]; GET ID IDNUM;PUT IDNUM TEXT; DELETE IDNUM; HELP ";
       sms.sendSms(smsComObj.from, helpString);
       console.log("help reply sent");
       break;
@@ -129,3 +125,4 @@ router.post("/incoming", (req, res) => {
 });
 
 module.exports = router;
+
