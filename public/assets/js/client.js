@@ -38,12 +38,12 @@ $(document).ready(function() {
         location.reload();
       });
     });
-
   });
 
   //ACCEPT PHONE NUMBER
   $("#phone-login-btn").click((event) => {
   	event.preventDefault();
+    $(".center-test").hide();
   	console.log("Clicked!");
 		let phoneNumber = $("#insert-phone").val().trim();
 		console.log(typeof phoneNumber);
