@@ -25,6 +25,8 @@ $(document).ready(function(){
   	}
   	else {
   		console.log("Not a valid phone number.");
+      // let modal = $(<div>).addClass("modal");
+      // modal.attr("")
 
   		//USER VALIDATION HERE
   	}
