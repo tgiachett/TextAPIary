@@ -5,9 +5,22 @@ $(document).ready(function() {
   $(".middle").click(function(event) {
   	$(this).attr("id", "click-hex");
     let popupText = $(this).text();
-    console.log(popupText);
   	$("#hex-modal").modal();
   	$("#selected-entry").text(popupText);
+
+    // SAMPLE DELETE using delete button
+    $("#delete-hex").click((event) => {
+      event.preventDefault();
+      const id = $("#click-hex").attr("textId");
+      $.ajax({
+        method: "DELETE",
+        url: "/entry_" + id
+      }).then(() => {
+        console.log("Entry deleted.");
+        location.reload();
+      });
+    });
+
   });
 
   //ACCEPT PHONE NUMBER
@@ -31,8 +44,10 @@ $(document).ready(function() {
         console.log(res);
         for (let i=0; i<16 && i<res.length; i++){
             let hexText = res[i].comBody;
+            let hexTextId = res[i].id;
             const id = `#middle_${i}`;
             $(id).text(hexText);
+            $(id).attr("textId", hexTextId);
         }
       });
   	}
@@ -102,14 +117,3 @@ $("#home").click((event) => {
   // 		location.reload();
   // 	});
   // });
-
-// SAMPLE DELETE using delete button
-	// $("#delete-hex").click((event) => {
-	//  let id = $(this).id;
- //  	event.preventDefault();
- //  	$.ajax("/entry_:id", {"id": id})
- //  		.then(()=>{
- //  		console.log("Entry deleted.");
- //  		location.reload();
- //  	});
- //  });
