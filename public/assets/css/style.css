@@ -387,6 +387,10 @@ body.index, body.page {
             text-align: center;
             width: 180px;
         }
+
+#wrongNumModal {
+    background-color: black;
+}
 /* ** FOOTER ============================================== */
 footer {
     margin-top: 45px;
