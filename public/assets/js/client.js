@@ -3,9 +3,9 @@ $(document).ready(function() {
 
   //TRIGGER DIARY TEXT MODAL
   $(".middle").click((event)=> {
-  	let popupText = $(this)
-    console.log(popupText);
   	$(this).attr("id", "click-hex");
+    let popupText = $("#click-hex").val();
+    console.log(popupText);
   	$("#hex-modal").modal();
   	$("#selected-entry").text(popupText);
   });
