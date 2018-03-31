@@ -1,12 +1,11 @@
-
 //TRIGGER DIARY TEXT MODAL
 $(document).ready(function(){
   $("#hex-modal").click((event)=> {
-    let popupText = $(this).val();
-    $(this).attr("id", "click-hex");
-    $("click-hex").modal();
-    $("#home").hide();
-    $("#selected-entry").text(popupText);
+  	let popupText = $(this).val();
+  	$(this).attr("id", "click-hex");
+  	$("click-hex").modal();
+  	$("#home").hide();
+  	$("#selected-entry").text(id + ". " + popupText);
   });
 
 //ACCEPT PHONE NUMBER
@@ -24,11 +23,12 @@ $(document).ready(function(){
 	    }, 1000);
   	}
   	else {
+
   		console.log("Not a valid phone number.");
       // let modal = $(<div>).addClass("modal");
       // modal.attr("")
 
-  		//USER VALIDATION HERE
+  		//USER VALIDATION MODAL HERE
   	}
   	$.ajax({
   		method: "GET",
@@ -40,6 +40,7 @@ $(document).ready(function(){
             const id = `#middle_${i}`;
             $(id).text(hexText);
         }
+  			//FIRST
   			// let userEntries = res.body;
   			// let hexEntries = [];
   			// userEntries.forEach((entry)=> {
@@ -87,8 +88,12 @@ $("#home").click((event) => {
 	location.reload();
 });
 
+
+
+
 // MOCHA CHAI TEST EXPORTS
-// module.exports = clientJS;
+// module.exports = someVar;
+
 
 // SAMPLE PUT using edit button
   // $("#submit-edit").click((event) => {
