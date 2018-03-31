@@ -44,7 +44,6 @@ $(document).ready(function() {
   //ACCEPT PHONE NUMBER
   $("#phone-login-btn").click((event) => {
   	event.preventDefault();
-    $(".center-test").hide();
   	console.log("Clicked!");
 		let phoneNumber = $("#insert-phone").val().trim();
 		console.log(typeof phoneNumber);
@@ -52,6 +51,7 @@ $(document).ready(function() {
   	if (typeof phoneNumber === "string" && phoneNumber.toString().length === 10) {
   		from += phoneNumber;
   		console.log(from);
+      $(".center-test").hide();
   		$("html, body").animate({
 	        scrollTop: $("#first_row").offset().top
 	    }, 1000);
