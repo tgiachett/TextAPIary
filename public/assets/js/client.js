@@ -32,22 +32,22 @@ $(document).ready(function(){
   		method: "GET",
   		url: "/api/from_" + from
   	}).then((err, res) => {
-  		if (err) {
-  			throw err;
-  		} 
-  		else {
-  			let userEntries = res.body;
-  			for (let i=0; i<16; i++){
-  				let hexText = userEntries[i].comBody;
-  				let id = ("'#middle_" + i + "'");
-					$(id).text(hexText);
-  			}
+      try {
+        let userEntries = res.body;
+        for (let i=0; i<16; i++){
+          let hexText = userEntries[i].comBody;
+          let id = ("'#middle_" + i + "'");
+          $(id).text(hexText);
+        }
+      }
+      catch (error) {
+        console.log(error);
+      }
   			// let userEntries = res.body;
   			// let hexEntries = [];
   			// userEntries.forEach((entry)=> {
   			// 	hexEntries.push(entry.comBody);
   			// });
-  		}
   	});
   });
 
