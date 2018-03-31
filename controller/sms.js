@@ -1,4 +1,4 @@
-'use strict'
+"use strict"
 
 // do I have to required this if this is required in server.js?
 require('dotenv').config();
