@@ -30,45 +30,30 @@
 
 #### Environmental Variables
 
-*Create a `.env` file in the root folder with the necessary information.  See `./docs/.env.example` for how it should look.*
+*Create a `.env` file in the root folder with the necessary information for local testing with MySQL. See `./docs/.env.example` for how it should look.*
 
-```
-*And repeat*
+*For Heroku deployment, the following environemntal variables must be configured:*
 
-*until finished*
+* DATABASE_URL: *your postgress database url*
+* NODE_ENV: production
 
-*End with an example of getting some data out of the system or using it for a little demo*
-```
+*the next three are according to your Zang or equivalent text service credentials*
+* ZAUTHTOKEN
+* ZNUM
+* ZSID
 
 ## Running the tests
 
-```
 *The assertion library used for this project is Chai. The test runner is Mocha.*
 
 *Developers: Install the latest chai and mocha devdepencies and then type mocha in your CLI to see pass/fail test results.*
-```
 
 ### Break down into end to end tests
 
-```
-*Explain what these tests test and why*
-
-*Give an example*
-```
-
 ### And coding style tests
-
-```
-*Explain what these tests test and why*
-
-*Give an example*
-```
 
 ## Use/Deployment
 
-
-
-```
 *Add additional notes about how to deploy this on a live system
 TEXT COMMANDS
 POST, TEXT, [TAG]
@@ -80,9 +65,7 @@ PUT, IDNUM, TEXT
 DELETE, IDNUM
   Removes the entry with id IDNUM
 HELP
-  displays commands
-*
-```
+  displays commands*
 
 ## Built With
 
@@ -106,8 +89,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-```
-* *Hat tip to anyone who's code was used*
-* *Inspiration*
-* *etc*
-```
+Made possible with Zang, an Avaya company.
