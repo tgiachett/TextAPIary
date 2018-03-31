@@ -14,7 +14,7 @@ $(document).ready(function() {
       const id = $("#click-hex").attr("textId");
       $.ajax({
         method: "DELETE",
-        url: "/entry_" + id
+        url: "/api/entry_" + id
       }).then(() => {
         console.log("Entry deleted.");
         location.reload();
