@@ -43,7 +43,7 @@
 ## Running the tests
 
 ```
-*Explain how to run the automated tests for this system*
+*The test runner for this project is Mocha. The assertion library is Chai*
 ```
 
 ### Break down into end to end tests
