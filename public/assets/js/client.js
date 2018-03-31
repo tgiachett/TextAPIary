@@ -35,8 +35,8 @@ $(document).ready(function(){
         console.log(res);
         for (let i=0; i<16; i++){
           let hexText = res[i].comBody;
-          let id = '$("#middle_' + i + '")';
-          id.text(hexText);
+          let id = '"#middle_' + i + '"';
+          $( id ).text(hexText);
         }
   			// let userEntries = res.body;
   			// let hexEntries = [];
