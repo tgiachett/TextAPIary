@@ -71,13 +71,13 @@
 ```
 *Add additional notes about how to deploy this on a live system
 TEXT COMMANDS
-POST TEXT [TAG]
+POST, TEXT, [TAG]
   Creates a text entry in the database with value TEXT with an optional keyword with value TAG
-GET ID IDNUM
+GET, ID, IDNUM
   Sends SMS back to SMS end-user of entry with id IDNUM
-PUT IDNUM TEXT
+PUT, IDNUM, TEXT
   Replaces the text of the entry with the value of TEXT
-DELETE IDNUM
+DELETE, IDNUM
   Removes the entry with id IDNUM
 HELP
   displays commands
