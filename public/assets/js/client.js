@@ -33,7 +33,7 @@ $(document).ready(function(){
   		url: "/api/from_" + from
   	}).then((err, res) => {
       if(err)
-        throw err;
+        console.log(err);
       else {
         let userEntries = res.body;
         for (let i=0; i<16; i++){
