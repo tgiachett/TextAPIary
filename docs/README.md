@@ -43,7 +43,9 @@
 ## Running the tests
 
 ```
-*The test runner for this project is Mocha. The assertion library is Chai*
+*The assertion library used for this project is Chai. The test runner is Mocha.*
+
+*Developers: Install the latest chai and mocha devdepencies and then type mocha in your CLI to see pass/fail test results.*
 ```
 
 ### Break down into end to end tests
