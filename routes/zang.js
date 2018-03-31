@@ -16,7 +16,7 @@ router.post("/incoming", (req, res) => {
   smsComObj.wholeBody = msgInfo.Body;
   // smsComObj.date = moment()
   
-  const smsArr = msgInfo.Body.split(" ");
+  const smsArr = msgInfo.Body.split(", ");
   console.log(smsArr[2])
   switch(smsArr[0].toLowerCase()) {
     case "post":
@@ -112,13 +112,14 @@ router.post("/incoming", (req, res) => {
       break;
     case "help":
       //return help options to user
-      const helpString = "COMMANDS: POST TEXT [TAG]; GET ID IDNUM;PUT IDNUM TEXT; DELETE IDNUM; HELP ";
+      const helpString = "COMMANDS: POST, TEXT, [TAG]; GET, ID, IDNUM;PUT, IDNUM, TEXT; DELETE, IDNUM; HELP ";
       sms.sendSms(smsComObj.from, helpString);
       console.log("help reply sent");
       break;
     case "auth":
       //auth logic
       break;
+    
     
     
   }
