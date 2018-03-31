@@ -4,13 +4,13 @@ $(document).ready(function(){
   	let popupText = $(this).val();
   	$(this).attr("id", "click-hex");
   	$("click-hex").modal();
-  	$("#home").hide();
   	$("#selected-entry").text(id + ". " + popupText);
   });
 
 //ACCEPT PHONE NUMBER
   $("#phone-login-btn").click((event) => {
   	event.preventDefault();
+    $(".center-test").hide();
   	console.log("Clicked!");
 		let phoneNumber = $("#insert-phone").val().trim();
 		console.log(typeof phoneNumber);
@@ -19,30 +19,24 @@ $(document).ready(function(){
   		from += phoneNumber;
   		console.log(from);
   		$("html, body").animate({
-	        scrollTop: $("#home").offset().top
+	        scrollTop: $("#first_row").offset().top
 	    }, 1000);
-  	}
-  	else {
-  		console.log("Not a valid phone number.");
-  		$("#wrongNumModal").modal("toggle");
-  	}
-  	$.ajax({
-  		method: "GET",
-  		url: "/api/from_" + from
-  	}).then((res) => {
+      $.ajax({
+        method: "GET",
+        url: "/api/from_" + from
+      }).then((res) => {
         console.log(res);
         for (let i=0; i<16 && i<res.length; i++){
             let hexText = res[i].comBody;
             const id = `#middle_${i}`;
             $(id).text(hexText);
         }
-  			//FIRST
-  			// let userEntries = res.body;
-  			// let hexEntries = [];
-  			// userEntries.forEach((entry)=> {
-  			// 	hexEntries.push(entry.comBody);
-  			// });
-  	});
+      });
+  	}
+  	else {
+  		console.log("Not a valid phone number.");
+  		$("#wrongNumModal").modal("toggle");
+  	}
   });
 
 //UPDATE METHOD
