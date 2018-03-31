@@ -6,34 +6,71 @@
 // 		expect( () => myFunction(params)).to.throw(Error); }) ;
 // });
 
-//TEST CONNECTION
+//REQUIRE CHAI FOR ASSERTION LIBRARY
 const expect = require("chai").expect;
 
+//TEST DATABASE BEING USED
 const config = require("../config/config.js");
 
-const w = require("../bin/www");
-
-const sampleJSON = { 
-	"ApiVersion": "v2",
-  "Body": "put 2",
-  "From": "+19193574249",
- "SmsSid": "SMf674eb32d5e14608d1cb4397810a16ad",
-  "SmsStatus": "received",
-  "To": "+19892560937" }
-
-//TEST DATABASE BEING USED
 describe("Test database use", function () {
 	it("should use entries database for development", function () {
 		expect(config.development.database).to.equal("entries_db");
 	});
 });
 
-//TEST CONNECTION
+//TEST CONNECTION TO LOCALHOST
+const w = require("../bin/www");
+
 describe("Test local connection", function () {
 	it("should connect to local port", function () {
 		expect(w).to.equal(8080);
 	});
 });
+
+//METHOD copy, directly from client.js alternative to exporting/require method
+
+//TEST PHONE NUMBER INPUT
+function phone (phoneNumber) {
+	if (typeof phoneNumber === "string" && phoneNumber.toString().length === 10) {
+  		from += phoneNumber;
+  		return from
+  	}
+  	else {
+  		console.log("Not a valid phone number.");
+  	}
+};
+
+describe("Test phone number", function () {
+	it("should accept only user input that is a usable number", function() {
+		expect(()=> phone("2522584444").to.equal(from));
+	}),
+
+	it("should reject user input that is not a valid phone number", function() {
+		expect(()=> phone("252258444").to.throw());
+	});
+});
+
+//TEST FOR LOOP to populate hexagons
+
+let userEntries = require("./testAPI");
+
+function getEntries (userEntries) {
+	for (let i=0; i<16 && i<userEntries.length; i++){
+		console.log(userEntries[i].comBody);
+	}
+}
+
+describe("Get response entry text", function(){
+	it("should print entry text and only as many as are available", function () {
+		expect(()=> getEntries(userEntries).to.not.throw());
+	});
+});
+
+
+
+//===================================================================================
+
+//IMPROVEMENTS => TEST THE FOLLOWING:
 
 //TEST PUT
 // describe("PUT function", function () {
@@ -43,59 +80,25 @@ describe("Test local connection", function () {
 // });
 
 //TEST POST
-describe("POST request", (done) => {
-	it("should return a JSON object", (done) => {
-		.get("ROUTEHERE")
-		.end((err, res) => {
-			expect(res.status).to.equal(200),
-			expect(res).to.be.json, 
-			done();
-		});
-	})
-})
-
-
-describe('GET /v1/users', (done) => {
-    it('should get a list of users', (done) => {
-      chai.request(app)
-      .get('/v1/users')
-      .end((err, res) => {
-        expect(res.status).to.equal(200)
-        expect(res).to.be.json
-        expect(res.body).to.be.a('array')
-        done()
-      })
-    })
-  })
-
-
-// describe("Send SMS", function () {
-// 	it("should send an sms from Zang", function () {
-// 		expect(sms.sendSMS(2522584604, "Hello", "http://textapiary.herokuapp.com/zang/incoming").to.equal(data);
+// describe("POST request", (done) => {
+// 	it("should return a JSON object", (done) => {
+// 		.get("ROUTEHERE")
+// 		.end((err, res) => {
+// 			expect(res.status).to.equal(200),
+// 			expect(res).to.be.json, 
+// 			done();
+// 		});
 // 	});
-
-// 	it("should not send SMS if parameters not passed through correctly", function () {
-// 		expect(sms.sendSMS()).to.throw(Error);
-// 	})
 // });
 
-// const sms = require('../controller/sms.js');
-// let smsReq;
-// function makeReq () {
-// 	smsReq = sms.listSms();
-// 	delayAsynch();
-// };
-// function delayAsynch (error, smsReq) {
-// 	if (error) {
-// 		throw error;
-// 	}
-// 	else{
-// 		console.log(smsReq);
-// 	}
-// }
-// makeReq();
-
-// module.exports = sms;
+//TEST VIRTUAL HTTP REQ
+// const sampleJSON = { 
+// 	"ApiVersion": "v2",
+//   "Body": "put 2",
+//   "From": "+19193574249",
+//  "SmsSid": "SMf674eb32d5e14608d1cb4397810a16ad",
+//   "SmsStatus": "received",
+//   "To": "+19892560937" }
 
 //DEFAULT TEST SCRIPTS?
     // "test": {
