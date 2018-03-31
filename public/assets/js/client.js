@@ -38,10 +38,6 @@ $(document).ready(function() {
         location.reload();
       });
     });
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/master
   });
 
   //ACCEPT PHONE NUMBER
