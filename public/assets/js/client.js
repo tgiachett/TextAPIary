@@ -1,10 +1,11 @@
 //TRIGGER DIARY TEXT MODAL
-$(document).ready(function(){
-  $("#hex-modal").click((event)=> {
+$(document).ready(function() {
+  $(".middle").click((event)=> {
   	let popupText = $(this).val();
+    console.log(popupText);
   	$(this).attr("id", "click-hex");
-  	$("click-hex").modal();
-  	$("#selected-entry").text(id + ". " + popupText);
+  	$("#hex-modal").modal();
+  	$("#selected-entry").text(popupText);
   });
 
 //ACCEPT PHONE NUMBER
