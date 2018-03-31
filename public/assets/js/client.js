@@ -32,8 +32,8 @@ $(document).ready(function(){
   		method: "GET",
   		url: "/api/from_" + from
   	}).then((err, res) => {
+      let userEntries = json.parse(res.body);
       try {
-        let userEntries = res.body;
         for (let i=0; i<16; i++){
           let hexText = userEntries[i].comBody;
           let id = ("'#middle_" + i + "'");
