@@ -21,6 +21,24 @@ $(document).ready(function() {
       });
     });
 
+    //UPDATE METHOD
+    $("#submit-edit").click((event) => {
+      event.preventDefault();
+      let updatedEntry = $("#inputText").val().trim();
+      const id = $("#click-hex").attr("textId");
+      $.ajax({
+        method: "PUT",
+        url: "/api/update", 
+        data : {
+          id: id,
+          comBody: updatedEntry, 
+        }
+      }).then(() => {
+        console.log("Entry updated!");
+        location.reload();
+      });
+    });
+
   });
 
   //ACCEPT PHONE NUMBER
@@ -57,37 +75,6 @@ $(document).ready(function() {
   	}
   });
 
-//UPDATE METHOD
-  $("#submit-edit").click((event) => {
-  	event.preventDefault();
-  	let updatedEntry = $("#inputText").val().trim();
-		let id = $(this).id;
-  	$.ajax({
-  		method: "PUT",
-			url: "/api/update", 
-			data : {
-				id: id,
-				comBody: updatedEntry, 
-			}
-  	}).then(() => {
-  		console.log("Entry updated!");
-  		location.reload();
-  	});
-  });
-
-//DELETE METHOD
-  $("#delete-hex").click((event) => {
-	 let id = $(this).id;
-  	event.preventDefault();
-  	$.ajax({
-  		method: "DELETE",
-  		url: "/api/entry_" + id
-  	}).then(()=>{
-  		console.log("Entry" + id +" has been deleted.");
-  		location.reload();
-  	});
-  });
-
 });
 
 //reload page on home click
@@ -97,23 +84,5 @@ $("#home").click((event) => {
 });
 
 
-
-
 // MOCHA CHAI TEST EXPORTS
 // module.exports = someVar;
-
-
-// SAMPLE PUT using edit button
-  // $("#submit-edit").click((event) => {
-  // 	event.preventDefault();
-  // 	let updatedEntry = $("#inputText").val().trim();
-		// let id = $(this).id;
-  // 	$.ajax("/api/", {
-  // 		method: "PUT",
-		// 	id: id, 
-		// 	comBody: updatedEntry
-  // 	}).then(() => {
-  // 		console.log("Entry updated!");
-  // 		location.reload();
-  // 	});
-  // });
