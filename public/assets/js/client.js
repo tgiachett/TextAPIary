@@ -33,11 +33,11 @@ $(document).ready(function(){
   		url: "/api/from_" + from
   	}).then((res) => {
         console.log(res);
-        for (let i=0; i<16; i++){
-          let hexText = res[i].comBody;
-          const id = `#middle_${i}`;
-          $(id).text("hello");
-          // $(id).text(hexText);
+        for (let i=0; i<16 && i<res.length; i++){
+            let hexText = res[i].comBody;
+            const id = `#middle_${i}`;
+            $(id).text("hello");
+            // $(id).text(hexText);
         }
   			// let userEntries = res.body;
   			// let hexEntries = [];
