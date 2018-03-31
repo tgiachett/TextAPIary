@@ -25,30 +25,27 @@ $(document).ready(function(){
   	else {
 
   		console.log("Not a valid phone number.");
+      // let modal = $(<div>).addClass("modal");
+      // modal.attr("")
 
   		//USER VALIDATION MODAL HERE
   	}
   	$.ajax({
   		method: "GET",
   		url: "/api/from_" + from
-  	}).then((err, res) => {
-  		if (err) {
-  			console.log("Hmmm...some unknown error which has not broken the code.");
-  		} 
-  		else {
-  			let userEntries = res.body;
-  			for (let i=0; i<16; i++){
-  				let hexText = userEntries[i].comBody;
-  				let id = $('"#middle_' + i + '"');
-					$(id).text(hexText);
-  			}
+  	}).then((res) => {
+        console.log(res);
+        for (let i=0; i<16 && i<res.length; i++){
+            let hexText = res[i].comBody;
+            const id = `#middle_${i}`;
+            $(id).text(hexText);
+        }
   			//FIRST
   			// let userEntries = res.body;
   			// let hexEntries = [];
   			// userEntries.forEach((entry)=> {
   			// 	hexEntries.push(entry.comBody);
   			// });
-  		}
   	});
   });
 
