@@ -36,8 +36,7 @@ $(document).ready(function(){
         for (let i=0; i<16 && i<res.length; i++){
             let hexText = res[i].comBody;
             const id = `#middle_${i}`;
-            $(id).text("hello");
-            // $(id).text(hexText);
+            $(id).text(hexText);
         }
   			// let userEntries = res.body;
   			// let hexEntries = [];
