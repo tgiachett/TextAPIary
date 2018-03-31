@@ -1,14 +1,16 @@
-//TRIGGER DIARY TEXT MODAL
+
 $(document).ready(function() {
+
+  //TRIGGER DIARY TEXT MODAL
   $(".middle").click((event)=> {
-  	let popupText = $(this).val();
+  	let popupText = $(this)
     console.log(popupText);
   	$(this).attr("id", "click-hex");
   	$("#hex-modal").modal();
   	$("#selected-entry").text(popupText);
   });
 
-//ACCEPT PHONE NUMBER
+  //ACCEPT PHONE NUMBER
   $("#phone-login-btn").click((event) => {
   	event.preventDefault();
     $(".center-test").hide();
