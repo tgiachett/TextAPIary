@@ -31,10 +31,8 @@ $(document).ready(function(){
   	$.ajax({
   		method: "GET",
   		url: "/api/from_" + from
-  	}).then((err, res) => {
-      if(err)
-        console.log(err);
-      else {
+  	}).then((res) => {
+        console.log(res);
         let userEntries = res.body;
         for (let i=0; i<16; i++){
           let hexText = userEntries[i].comBody;
@@ -46,7 +44,6 @@ $(document).ready(function(){
   			// userEntries.forEach((entry)=> {
   			// 	hexEntries.push(entry.comBody);
   			// });
-      }
   	});
   });
 
