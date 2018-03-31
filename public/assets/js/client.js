@@ -38,7 +38,8 @@ $(document).ready(function(){
           function id() {
             return '"#middle_' + i + '"';
           };
-          $(id).text(hexText);
+          $(id).text("hello");
+          // $(id).text(hexText);
         }
   			// let userEntries = res.body;
   			// let hexEntries = [];
