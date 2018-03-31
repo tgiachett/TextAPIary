@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
   //TRIGGER DIARY TEXT MODAL
-  $(".middle").click((event)=> {
+  $(".middle").click(function(event) {
   	$(this).attr("id", "click-hex");
     let popupText = $(this).text();
     console.log(popupText);
