@@ -18,11 +18,12 @@ $(document).ready(function(){
   		from += phoneNumber;
   		console.log(from);
   		$("html, body").animate({
-	        scrollTop: $(".center-me").offset().top
+	        scrollTop: $("#home").offset().top
 	    }, 1000);
   	}
   	else {
   		console.log("Not a valid phone number.");
+
   		//USER VALIDATION HERE
   	}
   	$.ajax({
@@ -34,10 +35,16 @@ $(document).ready(function(){
   		} 
   		else {
   			let userEntries = res.body;
-  			let hexEntries = [];
-  			userEntries.forEach((entry)=> {
-  				hexEntries.push(entry.comBody);
-  			});
+  			for (let i=0; i<16; i++){
+  				let hexText = userEntries[i].comBody;
+  				let id = ("'#middle_" + i + "'");
+					$(id).text(hexText);
+  			}
+  			// let userEntries = res.body;
+  			// let hexEntries = [];
+  			// userEntries.forEach((entry)=> {
+  			// 	hexEntries.push(entry.comBody);
+  			// });
   		}
   	});
   });
