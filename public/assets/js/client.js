@@ -23,12 +23,8 @@ $(document).ready(function(){
 	    }, 1000);
   	}
   	else {
-
   		console.log("Not a valid phone number.");
-      // let modal = $(<div>).addClass("modal");
-      // modal.attr("")
-
-  		//USER VALIDATION MODAL HERE
+  		$("#wrongNumModal").modal("toggle");
   	}
   	$.ajax({
   		method: "GET",
