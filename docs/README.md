@@ -41,6 +41,7 @@
 SMS COMMANDS  
 Post, "[ENTRY]"  
   Creates a text entry in the database with value ENTRY  
+  
 Get, id, [IDNUM]      
   Retrieve entry and send back to end-user
   
