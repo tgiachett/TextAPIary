@@ -4,10 +4,6 @@
 
 ## Getting Started
 
-### Prerequisites
-
-### Installing
-
 #### Node Modules
 
 *Run `npm install` in the console from the root folder to automatically install the following packages.*
@@ -40,32 +36,22 @@
 
 *Developers: Install the latest chai and mocha devdepencies and then type mocha in your CLI to see pass/fail test results.*
 
-### Break down into end to end tests
-
-### And coding style tests
-
 ## Use/Deployment
-
-*Add additional notes about how to deploy this on a live system
-TEXT COMMANDS
-POST, TEXT, [TAG]
+ 
+SMS COMMANDS  
+Post, "[ENTRY]"  
   Creates a text entry in the database with value TEXT with an optional keyword with value TAG
-GET, ID, IDNUM
-  Sends SMS back to SMS end-user of entry with id IDNUM
-PUT, IDNUM, TEXT
-  Replaces the text of the entry with the value of TEXT
-DELETE, IDNUM
-  Removes the entry with id IDNUM
-HELP
+Get, id, [IDNUM]    
+  Retrieve entry and send back to end-user
+  
+Put, [IDNUM], "[ENTRY]"  
+  Replaces the text of the entry with new value of ENTRY
+  
+Delete, [IDNUM]  
+  Removes the entry with id IDNUM  
+  
+Help
   displays commands*
-
-## Built With
-
-
-## Contributing
-
-
-## Versioning
 
 
 ## Authors
