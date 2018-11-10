@@ -37,10 +37,10 @@
 *Developers: Install the latest chai and mocha devdepencies and then type mocha in your CLI to see pass/fail test results.*
 
 ## Use/Deployment
- 
+
 SMS COMMANDS  
 Post, "[ENTRY]"  
-  Creates a text entry in the database with value TEXT with an optional keyword with value TAG
+  Creates a text entry in the database with value ENTRY
 Get, id, [IDNUM]    
   Retrieve entry and send back to end-user
   
@@ -52,6 +52,8 @@ Delete, [IDNUM]
   
 Help
   displays commands*
+  
+Send test commands to test server at +19892560937
 
 
 ## Authors
